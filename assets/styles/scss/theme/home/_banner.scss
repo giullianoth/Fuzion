@@ -1,0 +1,266 @@
+@include theme() {
+    &banner {
+        @include containerFluid;
+        padding-block: 60px 50px;
+
+        @include setResponsiveDesign($breakpoint-xx-large) {
+            padding-block: 160px 50px;
+        }
+
+        &__container {
+            @include container($container-width, 0);
+            @include flex(flex-start, flex-start);
+
+            @include setResponsiveDesign($breakpoint-small) {
+                @include container;
+            }
+
+            @include setResponsiveDesign($breakpoint-small) {
+                gap: 20px;
+            }
+        }
+
+        &__col1, &__col2 {
+            @include flex1;
+            @include flex(flex-start, flex-start);
+            text-align: center;
+
+            @include setResponsiveDesign($breakpoint-small) {
+                gap: 20px;
+                @include container($breakpoint-small, 0);
+            }
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                max-width: none;
+                @include flex2(20px);
+            }
+        }
+
+        &__title {
+            h2 {
+                font-size: 2.6em;
+                line-height: 1;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        &__subtitle, &__text {
+            font-weight: 700;
+        }
+
+        &__offer {
+            &1 {
+                @include flex1;
+                background-color: $color-orange;
+                padding: 0 40px 480px 40px;
+                @include relative;
+
+                @include setResponsiveDesign(425px) {
+                    padding-bottom: 560px
+                }
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    text-align: right;
+                    @include borderRadius;
+                    padding-bottom: 130px;
+                }
+
+                @include setResponsiveDesign($breakpoint-xx-large) {
+                    padding: 0 70px 130px 0;
+                }
+
+                & > * {
+                    @include relative;
+                }
+
+                &-image {
+                    @include absolute(unset, 50%);
+                    bottom: 0;
+                    transform: translateX(-50%);
+
+                    @include setResponsiveDesign(425px) {
+                        width: 80%;
+                    }
+
+                    @include setResponsiveDesign($breakpoint-small) {
+                        left: -49px;
+                        transform: none;
+                        width: 380px;
+                    }
+
+                    @include setResponsiveDesign($breakpoint-xx-large) {
+                        width: 440px;
+                    }
+
+                    @include setResponsiveDesign(1440px) {
+                        width: 530px;
+                    }
+                }
+
+                &-discount {
+                    color: $color-white;
+                    font-size: 1.4em;
+                    font-weight: 500;
+                    text-align: center;
+                    width: fit-content;
+                    margin:0 0 20px auto;
+                    padding: 30px;
+                    transform: translateY(-7px);
+                    @include backgroundImage("shape-1.png", no-repeat, contain)
+                }
+
+                &-subtitle {
+                    color: #fb3c3c;
+                    font-weight: 700;
+                    margin-bottom: 30px;
+                }
+
+                &-title {
+                    margin-bottom: 30px;
+
+                    .l2 {
+                        font-weight: 300;
+                    }
+
+                    .l3 {
+                        color: $color-white;
+                    }
+                }
+
+                &-text {
+                    margin-bottom: 30px;
+                }
+            }
+
+            &2 {
+                @include flex1;
+                padding: 60px;
+                @include backgroundImage("bg-56.png");
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    @include borderRadius;
+                }
+
+                &-wrapper {
+                    width: 50%;
+                    margin-left: auto;
+                    text-align: left;
+                }
+
+                &-subtitle {
+                    color: #fb3c3c;
+                    margin-bottom: 20px;
+                }
+
+                &-title {
+                    margin-bottom: 20px;
+
+                    h2 {
+                        font-size: 2.8em;
+                    }
+
+                    .l2 {
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            &3 {
+                @include flex1;
+                background-color: $color-purple;
+                padding: 40px 40px 540px 40px;
+                @include relative;
+
+                @include setResponsiveDesign(425px) {
+                    padding-bottom: 600px;
+                }
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    @include borderRadius;
+                    padding-bottom: 160px;
+                    text-align: left;
+                }
+
+                @include setResponsiveDesign($breakpoint-xx-large) {
+                    padding: 100px 80px;
+                }
+
+                & > * {
+                    @include relative;
+                }
+
+                &-image {
+                    @include absolute(unset, unset);
+                    bottom: 0;
+                    right: 50%;
+                    transform: translateX(50%);
+
+                    @include setResponsiveDesign(425px) {
+                        width: 80%;
+                    }
+
+                    @include setResponsiveDesign($breakpoint-small) {
+                        right: -30px;
+                        transform: none;
+                        width: 290px;
+                    }
+
+                    @include setResponsiveDesign($breakpoint-xx-large) {
+                        width: 360px;
+                    }
+                }
+
+                &-subtitle {
+                    color: #faa828;
+                    margin-bottom: 20px;
+                }
+
+                &-title {
+                    margin-bottom: 20px;
+
+                    h2 {
+                        color: #FFF;
+                    }
+                }
+
+                &-text {
+                    margin-bottom: 20px;
+                    color: #FFF;
+                }
+            }
+
+            &4, &5 {
+                @include flex1;
+                padding: 50px 0 310px 0;
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    @include borderRadius;
+                    @include flex2(20px);
+                }
+
+                &-title {
+                    margin-bottom: 20px;
+
+                    h2 {
+                        color: #FFF;
+                    }
+
+                    .l2 {
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            &4 {
+                @include backgroundImage("shoe-bg.png");
+            }
+
+            &5 {
+                @include backgroundImage("clock-bg-2.png");
+            }
+        }
+    }
+}

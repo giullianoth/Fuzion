@@ -1,0 +1,75 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    @include setBrowserPrefix(box-sizing, border-box);
+}
+
+body {
+    font-family: $font-roboto;
+    font-size: $font-size-default;
+    color: $color-dark-blue;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    @include setBrowserPrefix(object-fit, cover, "o");
+    @include setBrowserPrefix(object-position, center, "o");
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+@include theme() {
+    &button {
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        font-size: 1rem;
+        font-family: inherit;
+        color: $color-white;
+        cursor: pointer;
+        background-color: $color-gray;
+        padding: 12px 26px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+
+        &.blue {
+            background-color: #1544B1;
+        }
+
+        &.orange {
+            background-color: #faa828;
+        }
+
+        &.black {
+            background-color: #000;
+        }
+
+        &.clear {
+            background-color: transparent;
+            text-decoration: underline;
+            padding: 0;
+        }
+
+        &.over-black:hover {
+            background-color: #000;
+        }
+
+        &.over-red:hover {
+            background-color: #fb3c3c;
+        }
+
+        &.over-clear-red:hover {
+            color: #fb3c3c;
+        }
+    }
+}

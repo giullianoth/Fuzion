@@ -1,0 +1,38 @@
+// BREAKPOINTS
+$breakpoint-extra-small: 375px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-extra-large: 1024px;
+$breakpoint-xx-large: 1200px;
+
+// COLORS
+$color-white: #FFF;
+$color-black: #000;
+$color-gray: #888;
+$color-dark-blue: #050A0E;
+$color-blue: #1544B1;
+$color-orange: #fAA828;
+$color-red: #FB3C3C;
+$color-purple: #7F6AF9;
+
+// TIPOGRAPHY
+$font-roboto: "Roboto", sans-serif;
+$font-size-default: 1rem;
+
+// CONTAINER WIDTH
+$container-width: 1600px;
+$side-clearance: 4em;
+// $section-clearance: 80px;
+
+// TRANSITIONS AND ANIMATIONS
+$transition-duration-default: 0.3s;
+
+// BROWSER PREFIXES
+$browser-prefixes-default: ("moz", "webkit");
+
+// IMAGES
+$image-path: "../../../assets/images";
+
+// BORDER RADIUS
+$radius-default: 20px;
