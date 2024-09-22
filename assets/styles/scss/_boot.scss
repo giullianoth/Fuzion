@@ -72,4 +72,95 @@ ul {
             color: #fb3c3c;
         }
     }
+
+    &section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: $font-hind-siliguri;
+        font-size: 1.8em;
+        font-weight: 700;
+        line-height: 1.15em;
+    }
+
+    &divider {
+        width: 70px;
+        height: 4px;
+        background-color: $color-blue;
+        margin: 20px auto;
+    }
+
+    &product {
+        &-list {
+            @include containerFluid;
+            overflow: hidden;
+        }
+
+        &-item {
+            .image {
+                @include relative;
+
+                img {
+                    @include containerFluid;
+                }
+            }
+
+            .discount {
+                padding: 5px;
+                background-color: $color-blue;
+                color: $color-white;
+                font-size: 0.8em;
+                @include absolute(10px, 10px);
+            }
+
+            .info {
+                padding: 20px 10px;
+                text-align: center;
+            }
+
+            .name {
+                margin-bottom: 10px;
+
+                h1, h2 {
+                    font-size: 1em;
+                    font-weight: 400;
+                    color: $color-gray;
+                }
+            }
+
+            .rating {
+                color: $color-orange;
+                margin-bottom: 10px;
+            }
+
+            .price-action {
+                overflow: hidden;
+                height: 33px;
+                @include relative;
+
+                &:hover {
+                    .link {
+                        top: -100%;
+                    }
+                }
+
+                .price, .action {
+                    padding-block: 5px;
+                }
+
+                .actual-price {
+                    color: $color-light-gray;
+                    text-decoration: line-through;
+                }
+            }
+
+            .link {
+                color: $color-dark-blue;
+                font-weight: 500;
+                display: block;
+                @include containerFluid;
+                @include absolute;
+                @include transition;
+            }
+        }
+    }
 }

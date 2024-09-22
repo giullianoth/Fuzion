@@ -20,6 +20,16 @@
     margin-inline: auto;
 }
 
+@mixin container2($maxWidth: $container-width, $padding: 1em) {
+    max-width: $maxWidth;
+    padding-inline: $padding;
+    margin-inline: auto;
+
+    @include setResponsiveDesign($breakpoint-large) {
+        padding-inline: $side-clearance;
+    }
+}
+
 // @mixin containerClearance($spacing: $section-clearance) {
 //     padding-block: $spacing;
 
@@ -78,6 +88,10 @@
 
 @mixin flex4($gap: 0) {
     @include flexBasis(calc(100% / 4), calc($gap - ($gap / 4)));
+}
+
+@mixin flex5($gap: 0) {
+    @include flexBasis(calc(100% / 5), calc($gap - ($gap / 5)));
 }
 
 @mixin grow() {

@@ -1,0 +1,42 @@
+@include theme() {
+    &featured {
+        @include containerFluid;
+        padding-block: 30px 50px;
+
+        &__container {
+            @include container2;
+        }
+
+        &__products {
+            // @include flex(flex-start, stretch, nowrap);
+            @include flex(flex-start, stretch);
+            @include container(480px, 0);
+            gap: 20px;
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                max-width: none;
+            }
+        }
+
+        &__product {
+            @include flex1;
+            // min-width: 100%;
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                @include flex2(20px);
+            }
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flex3(20px);
+            }
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                @include flex5(20px);
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+}

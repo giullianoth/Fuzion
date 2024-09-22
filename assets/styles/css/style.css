@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -67,8 +67,82 @@ ul li {
 .fz-button.over-clear-red:hover {
   color: #fb3c3c;
 }
+.fz-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  line-height: 1.15em;
+}
+.fz-divider {
+  width: 70px;
+  height: 4px;
+  background-color: #1544B1;
+  margin: 20px auto;
+}
+.fz-product-list {
+  width: 100%;
+  overflow: hidden;
+}
+.fz-product-item .image {
+  position: relative;
+}
+.fz-product-item .image img {
+  width: 100%;
+}
+.fz-product-item .discount {
+  padding: 5px;
+  background-color: #1544B1;
+  color: #FFF;
+  font-size: 0.8em;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.fz-product-item .info {
+  padding: 20px 10px;
+  text-align: center;
+}
+.fz-product-item .name {
+  margin-bottom: 10px;
+}
+.fz-product-item .name h1, .fz-product-item .name h2 {
+  font-size: 1em;
+  font-weight: 400;
+  color: #888;
+}
+.fz-product-item .rating {
+  color: #fAA828;
+  margin-bottom: 10px;
+}
+.fz-product-item .price-action {
+  overflow: hidden;
+  height: 33px;
+  position: relative;
+}
+.fz-product-item .price-action:hover .link {
+  top: -100%;
+}
+.fz-product-item .price-action .price, .fz-product-item .price-action .action {
+  padding-block: 5px;
+}
+.fz-product-item .price-action .actual-price {
+  color: #CCC;
+  text-decoration: line-through;
+}
+.fz-product-item .link {
+  color: #050A0E;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease 0s;
+}
 
-/* Banner Section */
+/* Home Page */
 .fz-banner {
   width: 100%;
   padding-block: 60px 50px;
@@ -221,7 +295,7 @@ ul li {
 }
 .fz-banner__offer2 {
   flex-basis: 100%;
-  padding: 60px;
+  padding: 60px 20px;
   background-image: url("../../../assets/images/bg-56.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -232,12 +306,12 @@ ul li {
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     border-radius: 20px;
+    padding-inline: 60px;
   }
 }
 .fz-banner__offer2-wrapper {
-  width: 50%;
   margin-left: auto;
-  text-align: left;
+  text-align: right;
 }
 .fz-banner__offer2-subtitle {
   color: #fb3c3c;
@@ -245,9 +319,6 @@ ul li {
 }
 .fz-banner__offer2-title {
   margin-bottom: 20px;
-}
-.fz-banner__offer2-title h2 {
-  font-size: 2.8em;
 }
 .fz-banner__offer2-title .l2 {
   font-weight: 300;
@@ -321,7 +392,7 @@ ul li {
 }
 .fz-banner__offer4, .fz-banner__offer5 {
   flex-basis: 100%;
-  padding: 50px 0 310px 0;
+  padding-block: 50px 310px;
 }
 @media screen and (min-width: 576px) {
   .fz-banner__offer4, .fz-banner__offer5 {
@@ -351,4 +422,55 @@ ul li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.fz-featured {
+  width: 100%;
+  padding-block: 30px 50px;
+}
+.fz-featured__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+}
+@media screen and (min-width: 992px) {
+  .fz-featured__container {
+    padding-inline: 4em;
+  }
+}
+.fz-featured__products {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 480px;
+  padding-inline: 0;
+  margin-inline: auto;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .fz-featured__products {
+    max-width: none;
+  }
+}
+.fz-featured__product {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .fz-featured__product {
+    flex-basis: calc(50% - 10px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .fz-featured__product {
+    flex-basis: calc(33.3333333333% - 13.3333333333px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fz-featured__product {
+    flex-basis: calc(20% - 16px);
+  }
+  .fz-featured__product:last-child {
+    display: none;
+  }
 }
