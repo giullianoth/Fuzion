@@ -13,9 +13,6 @@
 
             @include setResponsiveDesign($breakpoint-small) {
                 @include container;
-            }
-
-            @include setResponsiveDesign($breakpoint-small) {
                 gap: 20px;
             }
         }
@@ -36,21 +33,6 @@
             }
         }
 
-        &__title {
-            h2 {
-                font-size: 2.6em;
-                line-height: 1;
-
-                span {
-                    display: block;
-                }
-            }
-        }
-
-        &__subtitle, &__text {
-            font-weight: 700;
-        }
-
         &__offer {
             &1 {
                 @include flex1;
@@ -64,7 +46,6 @@
 
                 @include setResponsiveDesign($breakpoint-small) {
                     text-align: right;
-                    @include borderRadius;
                     padding-bottom: 130px;
                 }
 
@@ -113,21 +94,11 @@
                 }
 
                 &-subtitle {
-                    color: #fb3c3c;
-                    font-weight: 700;
                     margin-bottom: 30px;
                 }
 
                 &-title {
                     margin-bottom: 30px;
-
-                    .l2 {
-                        font-weight: 300;
-                    }
-
-                    .l3 {
-                        color: $color-white;
-                    }
                 }
 
                 &-text {
@@ -141,28 +112,20 @@
                 @include backgroundImage("bg-56.png");
 
                 @include setResponsiveDesign($breakpoint-small) {
-                    @include borderRadius;
                     padding-inline: 60px;
                 }
 
                 &-wrapper {
                     margin-left: auto;
                     text-align: right;
-
-                    @include setResponsiveDesign($breakpoint-small) 
                 }
 
                 &-subtitle {
-                    color: #fb3c3c;
                     margin-bottom: 20px;
                 }
 
                 &-title {
                     margin-bottom: 20px;
-
-                    .l2 {
-                        font-weight: 300;
-                    }
                 }
             }
 
@@ -177,7 +140,6 @@
                 }
 
                 @include setResponsiveDesign($breakpoint-small) {
-                    @include borderRadius;
                     padding-bottom: 160px;
                     text-align: left;
                 }
@@ -212,21 +174,15 @@
                 }
 
                 &-subtitle {
-                    color: #faa828;
                     margin-bottom: 20px;
                 }
 
                 &-title {
                     margin-bottom: 20px;
-
-                    h2 {
-                        color: #FFF;
-                    }
                 }
 
                 &-text {
                     margin-bottom: 20px;
-                    color: #FFF;
                 }
             }
 
@@ -235,20 +191,11 @@
                 padding-block: 50px 310px;
 
                 @include setResponsiveDesign($breakpoint-small) {
-                    @include borderRadius;
                     @include flex2(20px);
                 }
 
                 &-title {
                     margin-bottom: 20px;
-
-                    h2 {
-                        color: #FFF;
-                    }
-
-                    .l2 {
-                        font-weight: 300;
-                    }
                 }
             }
 
