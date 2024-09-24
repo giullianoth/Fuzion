@@ -1,7 +1,15 @@
 @include theme() {
     &category {
         @include containerFluid;
-        padding-block: 250px 0;
+        margin-bottom: 80px;
+
+        @include setResponsiveDesign($breakpoint-extra-large) {            
+            padding-block: 140px 0;
+        }
+
+        @include setResponsiveDesign(1440px) {
+            padding-block: 250px 0;
+        }
 
         &__container {
             @include container($container-width, 0);
@@ -14,13 +22,23 @@
         }
 
         &__col1 {
-            // @include flexBasis(66%, 30px);
             @include flex1;
+            @include container($breakpoint-small, 0);
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(66%, 30px);
+                max-width: none;
+            }
         }
 
         &__col2 {
-            // @include flexBasis(33%);
             @include flex1;
+            @include container($breakpoint-small, 0);
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(33%);
+                max-width: none;
+            }
         }
 
         &__category {
@@ -30,9 +48,9 @@
                 padding: 20px 20px 260px 20px;
                 text-align: center;
 
-                @include setResponsiveDesign($breakpoint-small) {
-                    // padding: 82px 20px;
-                    // text-align: left;
+                @include setResponsiveDesign($breakpoint-medium) {
+                    padding: 82px 20px;
+                    text-align: left;
                 }
 
                 &-image {
@@ -44,8 +62,8 @@
                         width: 80%;
                     }
 
-                    @include setResponsiveDesign($breakpoint-small) {
-                        // width: auto;
+                    @include setResponsiveDesign($breakpoint-medium) {
+                        width: auto;
                     }
                 }
 
@@ -53,8 +71,12 @@
                     @include relative;
                     margin-left: auto;
 
-                    @include setResponsiveDesign($breakpoint-small) {
-                        // width: 40%;
+                    @include setResponsiveDesign($breakpoint-medium) {
+                        width: 50%;
+
+                        @include setResponsiveDesign($breakpoint-extra-large) {
+                            width: 40%;
+                        }
                     }
                 }
 
@@ -70,22 +92,22 @@
 
             &2 {
                 background-color: $color-light-blue;
-                // padding-top: 235px;
                 padding-block: 20px 520px;
                 @include relative;
                 text-align: center;
 
+                @include setResponsiveDesign($breakpoint-extra-large) {
+                    padding-block: 235px 0;
+                }
+
                 &-image {
                     @include absolute(unset);
                     bottom: 0;
-                    // transform: translateY(15px);
                     transform: translateY(18px);
                     height: 550px;
                 }
 
                 &-wrapper {
-                    // width: 55%;
-                    margin: auto;
                     padding-bottom: 40px;
                     @include relative;
                 }
@@ -93,6 +115,10 @@
                 &-title {
                     font-size: 1.4em;
                     margin-bottom: 20px;
+
+                    @include setResponsiveDesign($breakpoint-extra-large) {
+                        text-shadow: -2px -2px 0 $color-blue;
+                    }
                 }
             }
         }

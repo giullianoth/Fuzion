@@ -1,5 +1,5 @@
 @include theme() {
-    &featured {
+    &best-sellers {
         @include containerFluid;
         padding-block: 30px 50px;
 
