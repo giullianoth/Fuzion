@@ -31,8 +31,13 @@ ul li {
   list-style: none;
 }
 
+i.fa-solid, i.fa-regular, i.fa-brands {
+  vertical-align: middle;
+}
+
 .fz-button {
   text-decoration: none;
+  text-align: center;
   display: inline-block;
   border: none;
   font-size: 1rem;
@@ -53,6 +58,11 @@ ul li {
 .fz-button.black {
   background-color: #000;
 }
+.fz-button.outline-black {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
 .fz-button.clear {
   background-color: transparent;
   text-decoration: underline;
@@ -60,12 +70,15 @@ ul li {
 }
 .fz-button.over-black:hover {
   background-color: #000;
+  color: #FFF;
 }
 .fz-button.over-red:hover {
   background-color: #fb3c3c;
+  color: #FFF;
 }
 .fz-button.over-clear-red:hover {
   color: #fb3c3c;
+  color: #FFF;
 }
 .fz-section-title {
   text-align: center;
@@ -85,11 +98,33 @@ ul li {
     font-size: 1.8em;
   }
 }
+.fz-divide-section {
+  width: 100%;
+  padding-block: 30px 50px;
+}
+.fz-divide-section__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+@media screen and (min-width: 992px) {
+  .fz-divide-section__container {
+    padding-inline: 4em;
+  }
+}
 .fz-divider {
   width: 70px;
   height: 4px;
   background-color: #1544B1;
   margin: 20px auto;
+}
+.fz-divider.left {
+  margin-inline: 0 auto;
 }
 @media screen and (min-width: 576px) {
   .fz-card {
@@ -658,4 +693,149 @@ ul li {
   .fz-best-sellers__product:last-child {
     display: none;
   }
+}
+
+.fz-blog {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 992px) {
+  .fz-blog {
+    flex-basis: calc(66% - 120px);
+  }
+}
+.fz-blog__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+}
+.fz-blog__heading .fz-button {
+  padding: 5px 12px;
+}
+@media screen and (min-width: 576px) {
+  .fz-blog__heading .fz-button {
+    padding: 12px 26px;
+  }
+}
+.fz-blog__title {
+  text-align: left;
+  margin: 0;
+}
+.fz-blog__title h1 {
+  font-size: 1.2em;
+}
+.fz-blog__posts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+}
+.fz-blog__post {
+  flex-basis: 100%;
+  max-width: 576px;
+  padding-inline: 0;
+  margin-inline: auto;
+}
+@media screen and (min-width: 1200px) {
+  .fz-blog__post {
+    flex-basis: calc(33.3333333333% - 13.3333333333px);
+  }
+}
+.fz-blog__post-image {
+  margin-bottom: 20px;
+  height: 300px;
+}
+.fz-blog__post-image img {
+  width: 100%;
+  height: 100%;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+.fz-blog__post-date {
+  color: #888;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+.fz-blog__post-title {
+  margin-bottom: 10px;
+}
+.fz-blog__post-action .fz-button {
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-blog__post-action .fz-button {
+    width: auto;
+  }
+}
+
+.fz-testimonials {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 992px) {
+  .fz-testimonials {
+    flex-basis: 33%;
+  }
+}
+.fz-testimonials__title {
+  margin-bottom: 40px;
+  text-align: left;
+}
+.fz-testimonials__title h1 {
+  font-size: 1.2em;
+}
+.fz-testimonials__list {
+  padding: 40px;
+  background-color: #F2F3F5;
+  text-align: center;
+}
+.fz-testimonials__carousel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.fz-testimonials__item {
+  flex-basis: 100%;
+}
+.fz-testimonials__item-image {
+  margin-bottom: 20px;
+}
+.fz-testimonials__item-image img {
+  width: 80px;
+}
+.fz-testimonials__item-testimonial {
+  color: #888;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.fz-testimonials__item-author h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.fz-testimonials__item-author p {
+  color: #888;
+}
+.fz-testimonials__navigation {
+  margin-top: 20px;
+}
+.fz-testimonials__navigation span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #888;
+  margin-inline: 5px;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.fz-testimonials__navigation span.active {
+  width: 6px;
+  height: 6px;
+  background-color: #050A0E;
 }

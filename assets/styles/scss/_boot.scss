@@ -28,9 +28,16 @@ ul {
     }
 }
 
+i {
+    &.fa-solid, &.fa-regular, &.fa-brands {
+        vertical-align: middle;
+    }
+}
+
 @include theme() {
     &button {
         text-decoration: none;
+        text-align: center;
         display: inline-block;
         border: none;
         font-size: 1rem;
@@ -54,6 +61,12 @@ ul {
             background-color: #000;
         }
 
+        &.outline-black {
+            background-color: transparent;
+            color: $color-black;
+            border: 1px solid $color-black;
+        }
+
         &.clear {
             background-color: transparent;
             text-decoration: underline;
@@ -62,14 +75,17 @@ ul {
 
         &.over-black:hover {
             background-color: #000;
+            color: $color-white;
         }
 
         &.over-red:hover {
             background-color: #fb3c3c;
+            color: $color-white;
         }
 
         &.over-clear-red:hover {
             color: #fb3c3c;
+            color: $color-white;
         }
     }
 
@@ -90,11 +106,26 @@ ul {
         }
     }
 
+    &divide-section {
+        @include containerFluid;
+        padding-block: 30px 50px;
+
+        &__container {
+            @include container2;
+            @include flex(flex-start, flex-start);
+            gap: 120px;
+        }
+    }
+
     &divider {
         width: 70px;
         height: 4px;
         background-color: $color-blue;
         margin: 20px auto;
+
+        &.left {
+            margin-inline: 0 auto;
+        }
     }
 
     &card {

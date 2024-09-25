@@ -1,0 +1,79 @@
+@include theme() {
+    &testimonials {      
+        @include flex1;
+
+        @include setResponsiveDesign($breakpoint-large) {
+            @include flexBasis(33%);
+        }
+
+        &__title {
+            margin-bottom: 40px;
+            text-align: left;
+
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+
+        &__list {
+            padding: 40px;
+            background-color: $color-lighter-gray;
+            text-align: center;
+        }
+
+        &__carousel {
+            @include flex(flex-start, stretch, nowrap);
+        }
+
+        &__item {
+            @include flex1;
+
+            &-image {
+                margin-bottom: 20px;
+
+                img {
+                    width: 80px;
+                }
+            }
+
+            &-testimonial {
+                color: $color-gray;
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+
+            &-author {
+                h2 {
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                }
+
+                p {
+                    color: $color-gray;
+                }
+            }
+        }
+
+        &__navigation {
+            margin-top: 20px;
+
+            span {
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: $color-gray;
+                margin-inline: 5px;
+                cursor: pointer;
+                @include rounded;
+                vertical-align: middle;
+
+                &.active {
+                    width: 6px;
+                    height: 6px;
+                    background-color: $color-dark-blue;
+                }
+            }
+        }
+    }
+}

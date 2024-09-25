@@ -1,0 +1,75 @@
+@include theme() {
+    &blog {
+        @include flex1;
+
+        @include setResponsiveDesign($breakpoint-large) {
+            @include flexBasis(66%, 120px);
+        }
+
+        &__heading {
+            @include flex(space-between, center, nowrap);
+            margin-bottom: 40px;
+
+            .fz-button {
+                padding: 5px 12px;
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    padding: 12px 26px;
+                }
+            }
+        }
+
+        &__title {
+            text-align: left;
+            margin: 0;
+
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+
+        &__posts {
+            @include flex(flex-start, stretch);
+            gap: 40px 20px;
+        }
+
+        &__post {
+            @include flex1;
+            @include container($breakpoint-small, 0);
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                @include flex3(20px);
+            }
+
+            &-image {
+                margin-bottom: 20px;
+                height: 300px;
+
+                img {
+                    @include containerFluid(true);
+                    @include borderRadius;
+                }
+            }
+
+            &-date {
+                color: $color-gray;
+                font-size: 0.8em;
+                margin-bottom: 10px;
+            }
+
+            &-title {
+                margin-bottom: 10px;
+            }
+
+            &-action {
+                .fz-button {
+                    @include containerFluid;
+
+                    @include setResponsiveDesign($breakpoint-small) {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
