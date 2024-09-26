@@ -1,0 +1,58 @@
+@include theme() {
+    &optin {
+        @include containerFluid;
+        padding-block: 140px 0;
+
+        &__container {
+            @include container;
+        }
+
+        &__wrapper {
+            background-image: $gradient-blue;
+            padding: 110px 80px 125px 80px;
+            @include relative;
+
+            & > * {
+                @include relative;
+            }
+        }
+
+        &__image {
+            @include absolute(unset, 7px);
+            bottom: 0;
+        }
+
+        &__content {
+            width: 30%;
+            margin-left: auto;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+
+            .l2 {
+                font-size: 1.6em;
+            }
+        }
+
+        &__text {
+            margin-bottom: 20px;
+        }
+
+        &__form {
+            @include relative;
+
+            input {
+                @include containerFluid;
+                padding-right: 45%;
+            }
+
+            .fz-button {
+                @include absolute(10px, unset);
+                bottom: 10px;
+                right: 10px;
+                @include borderRadius(10px);
+            }
+        }
+    }
+}

@@ -6,9 +6,18 @@
             @include flexBasis(33%);
         }
 
+        .fz-divider {
+            @include setResponsiveDesign($breakpoint-large, true) {
+                margin-inline: auto;
+            }
+        }
+
         &__title {
             margin-bottom: 40px;
-            text-align: left;
+            
+            @include setResponsiveDesign($breakpoint-large) {
+                text-align: left;
+            }
 
             h1 {
                 font-size: 1.2em;
@@ -19,6 +28,7 @@
             padding: 40px;
             background-color: $color-lighter-gray;
             text-align: center;
+            @include borderRadius;
         }
 
         &__carousel {

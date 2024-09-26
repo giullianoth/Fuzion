@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: $font-roboto;
+    font-family: $font-open-sans;
     font-size: $font-size-default;
     color: $color-dark-blue;
 }
@@ -34,6 +34,21 @@ i {
     }
 }
 
+input {
+    padding: 21px 24px;
+    color: $color-dark-blue;
+    background-color: $color-white;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    @include borderRadius(15px);
+
+    &::placeholder {
+        color: $color-light-gray;
+    }
+}
+
 @include theme() {
     &button {
         text-decoration: none;
@@ -50,15 +65,15 @@ i {
         transition: all 0.3s ease;
 
         &.blue {
-            background-color: #1544B1;
+            background-color: $color-blue;
         }
 
         &.orange {
-            background-color: #faa828;
+            background-color: $color-orange;
         }
 
         &.black {
-            background-color: #000;
+            background-color: $color-black;
         }
 
         &.outline-black {
@@ -74,17 +89,22 @@ i {
         }
 
         &.over-black:hover {
-            background-color: #000;
+            background-color: $color-black;
             color: $color-white;
         }
 
         &.over-red:hover {
-            background-color: #fb3c3c;
+            background-color: $color-orange;
+            color: $color-white;
+        }
+
+        &.over-blue:hover {
+            background-color: $color-blue;
             color: $color-white;
         }
 
         &.over-clear-red:hover {
-            color: #fb3c3c;
+            color: $color-orange;
             color: $color-white;
         }
     }
@@ -134,7 +154,7 @@ i {
         }
 
         .title {
-            h2 {
+            h1, h2 {
                 font-size: 2.6em;
                 line-height: 1;
 

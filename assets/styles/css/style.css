@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   color: #050A0E;
 }
@@ -35,6 +35,22 @@ i.fa-solid, i.fa-regular, i.fa-brands {
   vertical-align: middle;
 }
 
+input {
+  padding: 21px 24px;
+  color: #050A0E;
+  background-color: #FFF;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+input::placeholder {
+  color: #CCC;
+}
+
 .fz-button {
   text-decoration: none;
   text-align: center;
@@ -53,7 +69,7 @@ i.fa-solid, i.fa-regular, i.fa-brands {
   background-color: #1544B1;
 }
 .fz-button.orange {
-  background-color: #faa828;
+  background-color: #fAA828;
 }
 .fz-button.black {
   background-color: #000;
@@ -73,11 +89,15 @@ i.fa-solid, i.fa-regular, i.fa-brands {
   color: #FFF;
 }
 .fz-button.over-red:hover {
-  background-color: #fb3c3c;
+  background-color: #fAA828;
+  color: #FFF;
+}
+.fz-button.over-blue:hover {
+  background-color: #1544B1;
   color: #FFF;
 }
 .fz-button.over-clear-red:hover {
-  color: #fb3c3c;
+  color: #fAA828;
   color: #FFF;
 }
 .fz-section-title {
@@ -133,17 +153,17 @@ i.fa-solid, i.fa-regular, i.fa-brands {
     border-radius: 20px;
   }
 }
-.fz-card .title h2 {
+.fz-card .title h1, .fz-card .title h2 {
   font-size: 2.6em;
   line-height: 1;
 }
-.fz-card .title h2 span {
+.fz-card .title h1 span, .fz-card .title h2 span {
   display: block;
 }
-.fz-card .title h2 .thin {
+.fz-card .title h1 .thin, .fz-card .title h2 .thin {
   font-weight: 300;
 }
-.fz-card .title h2 .white {
+.fz-card .title h1 .white, .fz-card .title h2 .white {
   color: #FFF;
 }
 .fz-card .subtitle {
@@ -697,30 +717,28 @@ i.fa-solid, i.fa-regular, i.fa-brands {
 
 .fz-blog {
   flex-basis: 100%;
+  position: relative;
 }
 @media screen and (min-width: 992px) {
   .fz-blog {
     flex-basis: calc(66% - 120px);
   }
 }
-.fz-blog__heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin-bottom: 40px;
-}
-.fz-blog__heading .fz-button {
-  padding: 5px 12px;
-}
-@media screen and (min-width: 576px) {
-  .fz-blog__heading .fz-button {
-    padding: 12px 26px;
+@media screen and (max-width: 992px) {
+  .fz-blog .fz-divider {
+    margin-inline: auto;
   }
 }
+.fz-blog__heading {
+  margin-bottom: 40px;
+}
 .fz-blog__title {
-  text-align: left;
   margin: 0;
+}
+@media screen and (min-width: 992px) {
+  .fz-blog__title {
+    text-align: left;
+  }
 }
 .fz-blog__title h1 {
   font-size: 1.2em;
@@ -770,6 +788,30 @@ i.fa-solid, i.fa-regular, i.fa-brands {
     width: auto;
   }
 }
+.fz-blog__cta {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 992px) {
+  .fz-blog__cta {
+    position: absolute;
+    top: 0;
+    left: unset;
+    right: 0;
+    margin-top: 44px;
+  }
+}
+.fz-blog__cta .fz-button {
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-blog__cta .fz-button {
+    width: auto;
+  }
+}
 
 .fz-testimonials {
   flex-basis: 100%;
@@ -779,9 +821,18 @@ i.fa-solid, i.fa-regular, i.fa-brands {
     flex-basis: 33%;
   }
 }
+@media screen and (max-width: 992px) {
+  .fz-testimonials .fz-divider {
+    margin-inline: auto;
+  }
+}
 .fz-testimonials__title {
   margin-bottom: 40px;
-  text-align: left;
+}
+@media screen and (min-width: 992px) {
+  .fz-testimonials__title {
+    text-align: left;
+  }
 }
 .fz-testimonials__title h1 {
   font-size: 1.2em;
@@ -790,6 +841,9 @@ i.fa-solid, i.fa-regular, i.fa-brands {
   padding: 40px;
   background-color: #F2F3F5;
   text-align: center;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
 }
 .fz-testimonials__carousel {
   display: flex;
@@ -838,4 +892,104 @@ i.fa-solid, i.fa-regular, i.fa-brands {
   width: 6px;
   height: 6px;
   background-color: #050A0E;
+}
+
+.fz-benefits {
+  width: 100%;
+  padding-block: 30px 120px;
+}
+.fz-benefits__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+}
+@media screen and (min-width: 992px) {
+  .fz-benefits__container {
+    padding-inline: 4em;
+  }
+}
+.fz-benefits__wrapper {
+  padding-top: 60px;
+  border-top: 1px solid #050A0E;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.fz-benefits__benefit {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+@media screen and (min-width: 576px) {
+  .fz-benefits__benefit {
+    flex-basis: calc(50% - 20px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fz-benefits__benefit {
+    flex-basis: calc(25% - 30px);
+  }
+}
+.fz-benefits__benefit-icon {
+  flex-basis: 32px;
+  font-size: 32px;
+}
+
+.fz-optin {
+  width: 100%;
+  padding-block: 140px 0;
+}
+.fz-optin__container {
+  max-width: 1600px;
+  padding-inline: 4em;
+  margin-inline: auto;
+}
+.fz-optin__wrapper {
+  background-image: linear-gradient(#00B6C4, #00A5D2);
+  padding: 110px 80px 125px 80px;
+  position: relative;
+}
+.fz-optin__wrapper > * {
+  position: relative;
+}
+.fz-optin__image {
+  position: absolute;
+  top: unset;
+  left: 7px;
+  bottom: 0;
+}
+.fz-optin__content {
+  width: 30%;
+  margin-left: auto;
+}
+.fz-optin__title {
+  margin-bottom: 20px;
+}
+.fz-optin__title .l2 {
+  font-size: 1.6em;
+}
+.fz-optin__text {
+  margin-bottom: 20px;
+}
+.fz-optin__form {
+  position: relative;
+}
+.fz-optin__form input {
+  width: 100%;
+  padding-right: 45%;
+}
+.fz-optin__form .fz-button {
+  position: absolute;
+  top: 10px;
+  left: unset;
+  bottom: 10px;
+  right: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }

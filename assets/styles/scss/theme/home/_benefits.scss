@@ -1,0 +1,36 @@
+@include theme() {
+    &benefits {
+        @include containerFluid;
+        padding-block: 30px 120px;
+
+        &__container {
+            @include container2;
+        }
+
+        &__wrapper {
+            padding-top: 60px;
+            border-top: 1px solid $color-dark-blue;
+            @include flex(flex-start, stretch);
+            gap: 40px;
+        }
+
+        &__benefit {
+            @include flex1;
+            @include flex(flex-start, flex-start, nowrap);
+            gap: 30px;
+
+            @include setResponsiveDesign($breakpoint-small) {
+                @include flex2(40px);
+            }
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                @include flex4(40px);
+            }
+
+            &-icon {
+                @include flexBasis(32px);
+                font-size: 32px;
+            }
+        }
+    }
+}
