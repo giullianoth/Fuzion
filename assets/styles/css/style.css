@@ -1159,6 +1159,13 @@ input::placeholder, textarea::placeholder {
   filter: saturate(0);
   transition: all 0.3s ease 0s;
 }
+@media screen and (min-width: 992px) {
+  .fz-contact__map iframe {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+}
 .fz-contact__map iframe:hover {
   filter: saturate(1);
 }
@@ -1212,4 +1219,31 @@ input::placeholder, textarea::placeholder {
 }
 .fz-contact__info-text {
   color: #888;
+}
+
+/* Blog */
+.fz-post {
+  width: 100%;
+  margin-block: 80px;
+}
+.fz-post__container {
+  max-width: 900px;
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+.fz-post__image {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.fz-post__image img {
+  max-width: 500px;
+  padding-inline: 0;
+  margin-inline: auto;
+  width: 100%;
+}
+.fz-post__title {
+  margin-bottom: 20px;
+}
+.fz-post__content p:not(:last-child) {
+  margin-bottom: 14px;
 }

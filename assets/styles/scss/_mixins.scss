@@ -29,6 +29,13 @@
         padding-inline: $side-clearance;
     }
 }
+
+@mixin postContainer($maxWidth: 900px, $padding: 20px) {
+    max-width: $maxWidth;
+    padding-inline: $padding;
+    margin-inline: auto;
+}
+
 // ATTRIBUTES WITH BROWSER PREFIXES
 @mixin setBrowserPrefix($attr, $value, $prefixes: $browser-prefixes-default) {
     @each $prefix in $prefixes {

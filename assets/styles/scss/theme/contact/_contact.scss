@@ -70,6 +70,10 @@
                 filter: saturate(0);
                 @include transition;
 
+                @include setResponsiveDesign($breakpoint-large) {
+                    @include borderRadius;
+                }
+
                 &:hover {
                     filter: saturate(1);
                 }
