@@ -34,14 +34,15 @@ i {
     }
 }
 
-input {
-    padding: 21px 24px;
+input, textarea {
+    padding: 15px 20px;
     color: $color-dark-blue;
-    background-color: $color-white;
+    background-color: transparent;
     border: none;
     font-family: inherit;
     font-size: inherit;
     outline: none;
+    border: 1px solid $color-light-gray;
     @include borderRadius(15px);
 
     &::placeholder {

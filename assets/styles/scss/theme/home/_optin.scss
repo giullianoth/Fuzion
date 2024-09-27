@@ -44,11 +44,16 @@
         }
 
         &__image {
-            @include absolute(unset);
+            @include absolute(unset, unset);
             bottom: 0;
+            width: 95%;
 
             @include setResponsiveDesign($breakpoint-small) {
-                left: 7px;
+                right: 0;
+            }
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                width: auto;
             }
         }
 
@@ -66,16 +71,12 @@
 
             @include setResponsiveDesign($breakpoint-xx-large) {
                 width: 35%;
-                margin-right: 0;
+                margin-left: 0;
             }
         }
 
         &__title {
             margin-bottom: 20px;
-
-            @include setResponsiveDesign($breakpoint-xx-large) {
-                text-shadow: -2px -2px 0 $color-blue;
-            }
 
             .l2 {
                 @include setResponsiveDesign($breakpoint-small) {
@@ -86,10 +87,6 @@
 
         &__text {
             margin-bottom: 20px;
-
-            @include setResponsiveDesign($breakpoint-xx-large) {
-                text-shadow: -2px -2px 0 $color-blue;
-            }
         }
 
         &__form {
@@ -97,6 +94,9 @@
 
             input {
                 @include containerFluid;
+                padding: 21px 24px;
+                border: none;
+                background-color: $color-white;
 
                 @include setResponsiveDesign($breakpoint-medium) {
                     padding-right: 45%;
@@ -111,9 +111,9 @@
 
                 @include setResponsiveDesign($breakpoint-medium) {
                     @include borderRadius(10px);
-                    @include absolute(10px, unset);
-                    bottom: 10px;
-                    right: 10px;
+                    @include absolute(5px, unset);
+                    bottom: 5px;
+                    right: 5px;
                     width: auto;
                     padding-block: 12px;
                     margin: 0;

@@ -1,0 +1,123 @@
+@include theme() {
+    &contact {
+        @include containerFluid;
+        margin-block: 100px;
+
+        &__container {
+            @include flex(flex-start, stretch);
+            gap: 60px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include container2;
+            }
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                column-gap: 120px;
+            }
+        }
+
+        &__content {
+            @include flex1;
+            padding-inline: 20px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flexBasis(60%, 60px);
+                padding: 0;
+            }
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                @include flexBasis(60%, 120px);
+            }
+        }
+
+        &__subtitle {
+            color: $color-blue;
+            font-weight: 500;
+        }
+
+        &__title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        &__text {
+            color: $color-gray;
+            margin-bottom: 20px;
+        }
+
+        &__form {
+            @include flex(flex-start, stretch, nowrap);
+            @include column;
+            row-gap: 20px;
+
+            .fz-button {
+                @include setResponsiveDesign($breakpoint-small) {
+                    align-self: flex-start;
+                }
+            }
+        }
+
+        &__map {
+            @include flex1;
+            height: 400px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flexBasis(40%);
+                height: auto;
+            }
+
+            iframe {
+                filter: saturate(0);
+                @include transition;
+
+                &:hover {
+                    filter: saturate(1);
+                }
+            }
+        }
+
+        &__info {
+            @include flex1;
+            padding-inline: 20px;
+            @include flex(flex-start, stretch);
+            gap: 40px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                padding: 0;
+                margin-top: 40px;
+            }
+
+            &-item {
+                @include flex1;
+                @include flex(flex-start, stretch, nowrap);
+                gap: 20px;
+
+                @include setResponsiveDesign($breakpoint-large) {
+                    @include flex3(40px);
+                }
+            }
+
+            &-icon {
+                @include flexBasis(80px);
+                @include flex;
+                height: 80px;
+                font-size: 2.2em;
+                color: $color-blue;
+                background-color: $color-lighter-gray;
+                @include borderRadius;
+            }
+
+            &-info {
+                @include flexBasis(calc(100% - 80px), 20px);
+            }
+
+            &-title {
+                margin-bottom: 6px;
+            }
+
+            &-text {
+                color: $color-gray;
+            }
+        }
+    }
+}

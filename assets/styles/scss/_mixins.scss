@@ -29,15 +29,6 @@
         padding-inline: $side-clearance;
     }
 }
-
-// @mixin containerClearance($spacing: $section-clearance) {
-//     padding-block: $spacing;
-
-//     @include setResponsiveDesign($breakpoint-small) {
-//         padding-block: calc($spacing - 20px);
-//     }
-// }
-
 // ATTRIBUTES WITH BROWSER PREFIXES
 @mixin setBrowserPrefix($attr, $value, $prefixes: $browser-prefixes-default) {
     @each $prefix in $prefixes {
@@ -94,8 +85,8 @@
     @include flexBasis(calc(100% / 5), calc($gap - ($gap / 5)));
 }
 
-@mixin grow() {
-    flex-grow: 1;
+@mixin column() {
+    flex-direction: column;
 }
 
 // POSITION
