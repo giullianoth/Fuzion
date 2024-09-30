@@ -243,6 +243,123 @@ input::placeholder, textarea::placeholder {
   transition: all 0.3s ease 0s;
 }
 
+/* Header & Footer */
+.fz-header {
+  width: 100%;
+}
+.fz-header__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__container {
+    padding-inline: 4em;
+  }
+}
+.fz-header__wrapper {
+  padding-block: 20px;
+  border-bottom: 1px solid #CCC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 100;
+}
+.fz-header__title {
+  display: none;
+}
+.fz-header__navigation-icon {
+  font-size: 1.6em;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__navigation-icon {
+    display: none;
+  }
+}
+.fz-header__navigation-menu {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: unset;
+  right: 0;
+  background-color: #FFF;
+  z-index: 101;
+  width: 100%;
+  max-width: 576px;
+  padding-inline: 0;
+  margin-inline: auto;
+  padding: 20px;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__navigation-menu {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0;
+    justify-self: flex-end;
+  }
+}
+.fz-header__navigation-menu-item.dropdown {
+  position: relative;
+}
+.fz-header__navigation-menu-item a {
+  font-weight: 500;
+  color: #050A0E;
+}
+.fz-header__navigation-submenu {
+  margin-top: 20px;
+  padding-left: 20px;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__navigation-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFF;
+    padding: 20px 90px 20px 20px;
+    margin: 0;
+  }
+}
+.fz-header__navigation-submenu-item:not(:last-child) {
+  margin-bottom: 20px !important;
+}
+.fz-header__navigation li:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__navigation li:not(:last-child) {
+    margin: 0;
+  }
+}
+.fz-header__user {
+  position: absolute;
+  top: 100%;
+  left: unset;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__user {
+    position: static;
+    margin: 0;
+  }
+}
+.fz-header__user a {
+  color: #050A0E;
+}
+
 /* Home Page */
 .fz-banner {
   width: 100%;
