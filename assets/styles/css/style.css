@@ -1436,7 +1436,12 @@ input::placeholder, textarea::placeholder {
   padding-block: 60px 0;
 }
 .fz-blog-page__side {
-  flex-basis: 20%;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .fz-blog-page__side {
+    flex-basis: 20%;
+  }
 }
 .fz-blog-page__side-search {
   margin-bottom: 40px;
@@ -1478,7 +1483,20 @@ input::placeholder, textarea::placeholder {
   color: #888;
 }
 .fz-blog-page__container {
-  flex-basis: calc(80% - 40px);
+  flex-basis: 100%;
+  max-width: 480px;
+  padding-inline: 0;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .fz-blog-page__container {
+    max-width: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fz-blog-page__container {
+    flex-basis: calc(80% - 40px);
+  }
 }
 .fz-blog-page__post {
   display: flex;
@@ -1486,17 +1504,40 @@ input::placeholder, textarea::placeholder {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 1200px) {
+  .fz-blog-page__post {
+    padding-bottom: 60px;
+  }
 }
 .fz-blog-page__post:not(:last-child) {
-  margin-bottom: 60px;
-  border-bottom: 1px solid #F2F3F5;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #CCC;
+}
+@media screen and (min-width: 1200px) {
+  .fz-blog-page__post:not(:last-child) {
+    margin-bottom: 60px;
+  }
 }
 .fz-blog-page__post-image {
-  flex-basis: 260px;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .fz-blog-page__post-image {
+    flex-basis: 260px;
+  }
+}
+.fz-blog-page__post-image img {
+  width: 100%;
 }
 .fz-blog-page__post-info {
-  flex-basis: calc(100% - 260px - 20px);
+  flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .fz-blog-page__post-info {
+    flex-basis: calc(100% - 260px - 20px);
+  }
 }
 .fz-blog-page__post-title {
   margin-bottom: 20px;
@@ -1509,6 +1550,7 @@ input::placeholder, textarea::placeholder {
 }
 .fz-blog-page__post-details {
   margin-bottom: 20px;
+  font-size: 0.9em;
 }
 .fz-blog-page__post-desc {
   color: #CCC;

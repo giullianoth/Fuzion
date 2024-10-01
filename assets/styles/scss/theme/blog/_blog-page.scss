@@ -6,7 +6,11 @@
 
     &blog-page {
         &__side {
-            @include flexBasis(20%);
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(20%);
+            }
 
             &-search {
                 margin-bottom: 40px;
@@ -55,25 +59,54 @@
         }
 
         &__container {
-            @include flexBasis(80%, 40px);
+            @include flex1;
+            @include container(480px, 0);
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                max-width: none;
+            }
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(80%, 40px);
+            }
         }
 
         &__post {
             @include flex(flex-start, flex-start);
             gap: 20px;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
+
+            @include setResponsiveDesign($breakpoint-xx-large) {
+                padding-bottom: 60px;
+            }
 
             &:not(:last-child) {
-                margin-bottom: 60px;
-                border-bottom: 1px solid $color-lighter-gray;
+                margin-bottom: 40px;
+                border-bottom: 1px solid $color-light-gray;
+
+                @include setResponsiveDesign($breakpoint-xx-large) {
+                    margin-bottom: 60px;
+                }
             }
 
             &-image {
-                @include flexBasis(260px);
+                @include flex1;
+
+                @include setResponsiveDesign($breakpoint-medium) {
+                    @include flexBasis(260px);
+                }
+
+                img {
+                    width: 100%;
+                }
             }
 
             &-info {
-                @include flexBasis(calc(100% - 260px), 20px);
+                @include flex1;
+
+                @include setResponsiveDesign($breakpoint-medium) {
+                    @include flexBasis(calc(100% - 260px), 20px);
+                }
             }
 
             &-title {
@@ -90,6 +123,7 @@
 
             &-details {
                 margin-bottom: 20px;
+                font-size: 0.9em;
             }
 
             &-desc {
