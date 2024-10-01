@@ -436,6 +436,9 @@ input::placeholder, textarea::placeholder {
 .fz-footer__attribution p:first-child {
   margin-bottom: 6px;
 }
+.fz-footer__attribution a {
+  color: #FB3C3C;
+}
 
 /* Home Page */
 .fz-banner {
@@ -975,6 +978,9 @@ input::placeholder, textarea::placeholder {
 .fz-blog__post-title {
   margin-bottom: 10px;
 }
+.fz-blog__post-title a {
+  color: inherit;
+}
 .fz-blog__post-action .fz-button {
   width: 100%;
 }
@@ -1425,6 +1431,89 @@ input::placeholder, textarea::placeholder {
 }
 
 /* Blog */
+.fz-divide-section__container:has(> .fz-blog-page__side, > .fz-blog-page__container) {
+  column-gap: 40px;
+  padding-block: 60px 0;
+}
+.fz-blog-page__side {
+  flex-basis: 20%;
+}
+.fz-blog-page__side-search {
+  margin-bottom: 40px;
+  position: relative;
+}
+.fz-blog-page__side-search input {
+  border: none;
+  background-color: #F2F3F5;
+  color: #888;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  width: 100%;
+}
+.fz-blog-page__side-search input::placeholder {
+  color: #888;
+}
+.fz-blog-page__side-search button {
+  position: absolute;
+  top: 50%;
+  left: unset;
+  right: 14px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+.fz-blog-page__side-recent {
+  margin-bottom: 40px;
+}
+.fz-blog-page__side-title {
+  margin-bottom: 20px;
+}
+.fz-blog-page__side-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.fz-blog-page__side-item a {
+  color: #888;
+}
+.fz-blog-page__container {
+  flex-basis: calc(80% - 40px);
+}
+.fz-blog-page__post {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 60px;
+}
+.fz-blog-page__post:not(:last-child) {
+  margin-bottom: 60px;
+  border-bottom: 1px solid #F2F3F5;
+}
+.fz-blog-page__post-image {
+  flex-basis: 260px;
+}
+.fz-blog-page__post-info {
+  flex-basis: calc(100% - 260px - 20px);
+}
+.fz-blog-page__post-title {
+  margin-bottom: 20px;
+}
+.fz-blog-page__post-title h1 {
+  font-size: 1.2em;
+}
+.fz-blog-page__post-title a {
+  color: inherit;
+}
+.fz-blog-page__post-details {
+  margin-bottom: 20px;
+}
+.fz-blog-page__post-desc {
+  color: #CCC;
+}
+
 .fz-post {
   width: 100%;
   margin-block: 80px;

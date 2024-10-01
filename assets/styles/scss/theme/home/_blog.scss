@@ -14,16 +14,7 @@
         }
 
         &__heading {
-            // @include flex(space-between, center, nowrap);
             margin-bottom: 40px;
-
-            // .fz-button {
-            //     padding: 5px 12px;
-
-            //     @include setResponsiveDesign($breakpoint-small) {
-            //         padding: 12px 26px;
-            //     }
-            // }
         }
 
         &__title {
@@ -69,6 +60,10 @@
 
             &-title {
                 margin-bottom: 10px;
+
+                a {
+                    color: inherit;
+                }
             }
 
             &-action {

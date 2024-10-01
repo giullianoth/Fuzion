@@ -1,0 +1,100 @@
+@include theme() {
+    &divide-section__container:has(> .fz-blog-page__side, > .fz-blog-page__container) {
+        column-gap: 40px;
+        padding-block: 60px 0;
+    }
+
+    &blog-page {
+        &__side {
+            @include flexBasis(20%);
+
+            &-search {
+                margin-bottom: 40px;
+                @include relative;
+
+                input {
+                    border: none;
+                    background-color: $color-lighter-gray;
+                    color: $color-gray;
+                    @include borderRadius(50px);
+                    @include containerFluid;
+
+                    &::placeholder {
+                        color: $color-gray;
+                    }
+                }
+
+                button {
+                    @include absolute(50%, unset);
+                    right: 14px;
+                    transform: translateY(-50%);
+                    background: none;
+                    border: none;
+                    font-size: 1em;
+                    cursor: pointer;
+                }
+            }
+
+            &-recent {
+                margin-bottom: 40px;
+            }
+
+            &-title {
+                margin-bottom: 20px;
+            }
+
+            &-item {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    color: $color-gray;
+                }
+            }
+        }
+
+        &__container {
+            @include flexBasis(80%, 40px);
+        }
+
+        &__post {
+            @include flex(flex-start, flex-start);
+            gap: 20px;
+            padding-bottom: 60px;
+
+            &:not(:last-child) {
+                margin-bottom: 60px;
+                border-bottom: 1px solid $color-lighter-gray;
+            }
+
+            &-image {
+                @include flexBasis(260px);
+            }
+
+            &-info {
+                @include flexBasis(calc(100% - 260px), 20px);
+            }
+
+            &-title {
+                margin-bottom: 20px;
+
+                h1 {
+                    font-size: 1.2em;
+                }
+
+                a {
+                    color: inherit;
+                }
+            }
+
+            &-details {
+                margin-bottom: 20px;
+            }
+
+            &-desc {
+                color: $color-light-gray;
+            }
+        }
+    }
+}
