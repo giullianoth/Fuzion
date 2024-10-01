@@ -49,11 +49,20 @@
                 &-item {
                     &.dropdown {
                         @include relative;
+
+                        i {
+                            margin-left: 8px;
+                        }
                     }
 
                     a {
                         font-weight: 500;
+                        font-size: 1.2em;
                         color: $color-dark-blue;
+
+                        @include setResponsiveDesign($breakpoint-large) {
+                            font-size: 1em;
+                        }
                     }
                 }
             }

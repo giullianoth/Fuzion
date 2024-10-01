@@ -10,7 +10,87 @@
     <link rel="stylesheet" href="/assets/styles/css/style.min.css">
 </head>
 <body>
-    <header></header>
+    <header class="fz-header">
+        <div class="fz-header__container">
+            <div class="fz-header__wrapper">
+                <div class="fz-header__logo">
+                    <h1 class="fz-header__title">Fuzion</h1>
+    
+                    <a href="/">
+                        <img src="/assets/images/logo2.png" alt="Fuzion">
+                    </a>
+                </div>
+    
+                <nav class="fz-header__navigation">
+                    <div class="fz-header__navigation-icon j_menu_icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+    
+                    <ul class="fz-header__navigation-menu j_menu">
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/">Início</a>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item dropdown j_dropdown">
+                            <a href="#">Loja <i class="fa-solid fa-chevron-down"></i></a>
+    
+                            <ul class="fz-header__navigation-submenu j_submenu">
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Homens</a>
+                                </li>
+    
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Mulheres</a>
+                                </li>
+
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Virtual</a>
+                                </li>
+    
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">E-book</a>
+                                </li>
+                            </ul>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/blog/">Blog</a>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/contato/">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <ul class="fz-header__user">
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     <main>
         <section class="fz-contact">
@@ -85,6 +165,92 @@
         </section>
     </main>
 
-    <footer></footer>
+    <footer class="fz-footer">
+        <div class="fz-footer__container">
+            <div class="fz-footer__navigation">
+                <div class="fz-footer__headline">
+                    <div class="fz-footer__headline-logo">
+                        <a href="/">
+                            <img src="/assets/images/logo2.png" alt="Fuzion">
+                        </a>
+                    </div>
+
+                    <p class="fz-footer__headline-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos minima dolor dignissimos sint nulla, necessitatibus quo ipsa cum hic, odit modi distinctio architecto, accusantium quaerat ipsam corporis quisquam molestias deserunt.</p>
+                </div>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>Institucional</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Início</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Contato</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Minha Conta</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Lista de Desejos</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>Loja</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Loja</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Compras</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Sair da Conta</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>E-commerce</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Métodos de Pagamento</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Endereços</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Recuperar Senha</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="fz-footer__attribution">
+                <p>Copyright &copy; 2024 Fusion E-commerce | Made with ❤️ by <a href="#" target="_blank" rel="noopener noreferrer">Jim Fahad Digital</a></p>
+
+                <p>Developed by <a href="" target="_blank" rel="noopener noreferrer">Giulliano Guimarães</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/script.js" type="module"></script>
 </body>
 </html>

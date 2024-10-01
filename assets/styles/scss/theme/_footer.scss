@@ -1,0 +1,68 @@
+@include theme() {
+    &footer {
+        @include containerFluid;
+        background-color: $color-lighter-gray;
+        color: $color-gray;
+
+        &__container {
+            @include container2;
+        }
+
+        &__navigation {
+            padding-block: 60px;
+            @include flex(space-between, stretch);
+            row-gap: 40px;
+
+        }
+
+        &__headline {
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flexBasis(30%);
+            }
+
+            &-logo {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__menu {
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-small) {
+                @include flex2;
+            }
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                @include flexBasis(unset);
+            }
+
+            &-title {
+                margin-bottom: 20px;
+
+                h2 {
+                    color: $color-dark-blue;
+                }
+            }
+
+            &-item {
+                line-height: 2.2em;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+        &__attribution {
+            text-align: center;
+            font-size: 0.7em;
+            padding-bottom: 14px;
+
+            p:first-child {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}

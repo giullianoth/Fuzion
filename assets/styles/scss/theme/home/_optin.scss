@@ -1,7 +1,14 @@
 @include theme() {
     &optin {
         @include containerFluid;
-        padding-block: 140px 60px;
+
+        @include setResponsiveDesign($breakpoint-small) {
+            padding-bottom: 60px;
+        }
+
+        @include setResponsiveDesign($breakpoint-xx-large) {
+            padding-top: 120px;
+        }
 
         &__container {
            @include setResponsiveDesign($breakpoint-small) {

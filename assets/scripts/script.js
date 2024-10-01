@@ -31,3 +31,12 @@ dropDown.forEach(item => {
         }
     })
 })
+
+window.addEventListener("resize", () => {
+    let icon = menuIcon.querySelector("i")
+    
+    if (window.innerWidth >= 992) {
+        menu.style.display = ""
+        icon.classList.replace("fa-xmark", "fa-bars")
+    }
+})

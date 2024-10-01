@@ -308,9 +308,18 @@ input::placeholder, textarea::placeholder {
 .fz-header__navigation-menu-item.dropdown {
   position: relative;
 }
+.fz-header__navigation-menu-item.dropdown i {
+  margin-left: 8px;
+}
 .fz-header__navigation-menu-item a {
   font-weight: 500;
+  font-size: 1.2em;
   color: #050A0E;
+}
+@media screen and (min-width: 992px) {
+  .fz-header__navigation-menu-item a {
+    font-size: 1em;
+  }
 }
 .fz-header__navigation-submenu {
   margin-top: 20px;
@@ -358,6 +367,74 @@ input::placeholder, textarea::placeholder {
 }
 .fz-header__user a {
   color: #050A0E;
+}
+
+.fz-footer {
+  width: 100%;
+  background-color: #F2F3F5;
+  color: #888;
+}
+.fz-footer__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+}
+@media screen and (min-width: 992px) {
+  .fz-footer__container {
+    padding-inline: 4em;
+  }
+}
+.fz-footer__navigation {
+  padding-block: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+.fz-footer__headline {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 992px) {
+  .fz-footer__headline {
+    flex-basis: 30%;
+  }
+}
+.fz-footer__headline-logo {
+  margin-bottom: 20px;
+}
+.fz-footer__menu {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-footer__menu {
+    flex-basis: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fz-footer__menu {
+    flex-basis: unset;
+  }
+}
+.fz-footer__menu-title {
+  margin-bottom: 20px;
+}
+.fz-footer__menu-title h2 {
+  color: #050A0E;
+}
+.fz-footer__menu-item {
+  line-height: 2.2em;
+}
+.fz-footer__menu-item a {
+  color: inherit;
+}
+.fz-footer__attribution {
+  text-align: center;
+  font-size: 0.7em;
+  padding-bottom: 14px;
+}
+.fz-footer__attribution p:first-child {
+  margin-bottom: 6px;
 }
 
 /* Home Page */
@@ -1060,7 +1137,16 @@ input::placeholder, textarea::placeholder {
 
 .fz-optin {
   width: 100%;
-  padding-block: 140px 60px;
+}
+@media screen and (min-width: 576px) {
+  .fz-optin {
+    padding-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fz-optin {
+    padding-top: 120px;
+  }
 }
 @media screen and (min-width: 576px) {
   .fz-optin__container {
