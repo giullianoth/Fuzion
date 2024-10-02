@@ -95,7 +95,7 @@ input, textarea {
         }
 
         &.over-red:hover {
-            background-color: $color-orange;
+            background-color: $color-red;
             color: $color-white;
         }
 
@@ -105,8 +105,7 @@ input, textarea {
         }
 
         &.over-clear-red:hover {
-            color: $color-orange;
-            color: $color-white;
+            color: $color-red;
         }
     }
 

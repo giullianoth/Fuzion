@@ -90,7 +90,7 @@ input::placeholder, textarea::placeholder {
   color: #FFF;
 }
 .fz-button.over-red:hover {
-  background-color: #fAA828;
+  background-color: #FB3C3C;
   color: #FFF;
 }
 .fz-button.over-blue:hover {
@@ -98,8 +98,7 @@ input::placeholder, textarea::placeholder {
   color: #FFF;
 }
 .fz-button.over-clear-red:hover {
-  color: #fAA828;
-  color: #FFF;
+  color: #FB3C3C;
 }
 .fz-section-title {
   text-align: center;
@@ -291,6 +290,7 @@ input::placeholder, textarea::placeholder {
   padding-inline: 0;
   margin-inline: auto;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   display: none;
 }
 @media screen and (min-width: 992px) {
@@ -302,7 +302,7 @@ input::placeholder, textarea::placeholder {
     flex-wrap: wrap;
     gap: 50px;
     padding: 0;
-    justify-self: flex-end;
+    box-shadow: none;
   }
 }
 .fz-header__navigation-menu-item.dropdown {
@@ -334,6 +334,7 @@ input::placeholder, textarea::placeholder {
     background-color: #FFF;
     padding: 20px 90px 20px 20px;
     margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   }
 }
 .fz-header__navigation-submenu-item:not(:last-child) {
