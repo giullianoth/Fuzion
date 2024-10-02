@@ -1,6 +1,5 @@
 @include theme() {
     &divide-section__container:has(> .fz-blog-page__side, > .fz-blog-page__container) {
-        column-gap: 40px;
         padding-block: 60px 0;
     }
 
@@ -14,29 +13,6 @@
 
             &-search {
                 margin-bottom: 40px;
-                @include relative;
-
-                input {
-                    border: none;
-                    background-color: $color-lighter-gray;
-                    color: $color-gray;
-                    @include borderRadius(50px);
-                    @include containerFluid;
-
-                    &::placeholder {
-                        color: $color-gray;
-                    }
-                }
-
-                button {
-                    @include absolute(50%, unset);
-                    right: 14px;
-                    transform: translateY(-50%);
-                    background: none;
-                    border: none;
-                    font-size: 1em;
-                    cursor: pointer;
-                }
             }
 
             &-recent {

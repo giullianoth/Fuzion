@@ -34,7 +34,7 @@ i {
     }
 }
 
-input, textarea {
+input:not([type="range"]), textarea {
     padding: 15px 20px;
     color: $color-dark-blue;
     background-color: transparent;
@@ -133,7 +133,7 @@ input, textarea {
         &__container {
             @include container2;
             @include flex(flex-start, flex-start);
-            gap: 120px;
+            gap: 60px;
         }
     }
 
@@ -228,6 +228,10 @@ input, textarea {
                     font-size: 1em;
                     font-weight: 400;
                     color: $color-gray;
+
+                    a {
+                        color: inherit;
+                    }
                 }
             }
 
@@ -265,6 +269,32 @@ input, textarea {
                 @include absolute;
                 @include transition;
             }
+        }
+    }
+
+    &search {        
+        @include relative;
+
+        input {
+            border: none;
+            background-color: $color-lighter-gray;
+            color: $color-gray;
+            @include borderRadius(50px);
+            @include containerFluid;
+
+            &::placeholder {
+                color: $color-gray;
+            }
+        }
+
+        button {
+            @include absolute(50%, unset);
+            right: 14px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
         }
     }
 }

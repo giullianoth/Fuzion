@@ -4,7 +4,7 @@
         @include relative;
 
         @include setResponsiveDesign($breakpoint-large) {
-            @include flexBasis(66%, 120px);
+            @include flexBasis(66%, 60px);
         }
 
         .fz-divider {
@@ -46,6 +46,10 @@
                 margin-bottom: 20px;
                 height: 300px;
 
+                @include setResponsiveDesign($breakpoint-xx-large) {
+                    height: 200px;
+                }
+
                 img {
                     @include containerFluid(true);
                     @include borderRadius;
@@ -60,6 +64,10 @@
 
             &-title {
                 margin-bottom: 10px;
+
+                @include setResponsiveDesign($breakpoint-xx-large) {
+                    font-size: 1em;
+                }
 
                 a {
                     color: inherit;

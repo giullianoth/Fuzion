@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Fuzion</title>
+
+    <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous" defer></script>
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+</head>
+<body>
+    <header class="fz-header">
+        <div class="fz-header__container">
+            <div class="fz-header__wrapper">
+                <div class="fz-header__logo">
+                    <h1 class="fz-header__title">Fuzion</h1>
+    
+                    <a href="/">
+                        <img src="/assets/images/logo2.png" alt="Fuzion">
+                    </a>
+                </div>
+    
+                <nav class="fz-header__navigation">
+                    <div class="fz-header__navigation-icon j_menu_icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+    
+                    <ul class="fz-header__navigation-menu j_menu">
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/">Início</a>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item dropdown j_dropdown">
+                            <a href="#">Loja <i class="fa-solid fa-chevron-down"></i></a>
+    
+                            <ul class="fz-header__navigation-submenu j_submenu">
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Homens</a>
+                                </li>
+    
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Mulheres</a>
+                                </li>
+
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">Virtual</a>
+                                </li>
+    
+                                <li class="fz-header__navigation-submenu-item">
+                                    <a href="#">E-book</a>
+                                </li>
+                            </ul>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/blog/">Blog</a>
+                        </li>
+    
+                        <li class="fz-header__navigation-menu-item">
+                            <a href="/contato/">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <ul class="fz-header__user">
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>
+    
+                    <li class="fz-header__user-item">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="fz-divide-section">
+        <div class="fz-divide-section__container">
+            <aside class="fz-store__side">
+                <div class="fz-store__side-search">
+                    <form class="fz-search">
+                        <input type="text" name="blog-search" id="blog-search" placeholder="Procurar produtos...">
+    
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+    
+                <article class="fz-store__side-filter">
+                    <header class="fz-store__side-title">
+                        <h1>Filtrar por preço</h1>
+                    </header>
+    
+                    <div class="fz-store__filter j_filter">
+                        <div class="range j_price_range">
+                            <div class="bar">
+                                <div class="progress"></div>
+                            </div>
+
+                            <input type="range" name="price-min" id="price-min" min="50" max="300" value="50" class="handle min">
+                            <input type="range" name="price-max" id="price-max" min="50" max="300" value="300" class="handle max">
+                        </div>
+
+                        <div class="value j_price_range_value">
+                            <button class="fz-button blue">Filtrar</button>
+                            
+                            <p>
+                                Preço R$
+                                <span class="min">50</span>
+                                -
+                                <span class="max">300</span>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="fz-store__side-categories">
+                    <header class="fz-store__side-title">
+                        <h1>Categorias de produtos</h1>
+                    </header>
+    
+                    <ul class="list">
+                        <li class="item">
+                            <span>Bolsas</span>
+                            <span>(1)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>E-book</span>
+                            <span>(2)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>Homens</span>
+                            <span>(8)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>Camisas</span>
+                            <span>(4)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>Virtual</span>
+                            <span>(2)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>Relógios</span>
+                            <span>(2)</span>
+                        </li>
+
+                        <li class="item">
+                            <span>Mulheres</span>
+                            <span>(2)</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="fz-store__side-tags">
+                    <header class="fz-store__side-title">
+                        <h1>Tags de produtos</h1>
+                    </header>
+    
+                    <ul class="list">
+                        <li class="item">Casual</li>
+                        <li class="item">E-book</li>
+                        <li class="item">Formal</li>
+                        <li class="item">Bolsas</li>
+                        <li class="item">Homens</li>
+                        <li class="item">Calças</li>
+                        <li class="item">Calçados</li>
+                        <li class="item">Camisas</li>
+                        <li class="item">Virtual</li>
+                        <li class="item">Relógios</li>
+                        <li class="item">Mulheres</li>
+                    </ul>
+                </article>
+            </aside>
+    
+            <main class="fz-store__container fz-product-list">
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <a href="#">
+                            <img src="/assets/images/742380_XJGKU_4215_001_100_0000_Light-Cotton-jersey-polo-shirt.jpg" alt="Camisa polo de malha de algodão">
+                        </a>
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>
+                                <a href="#">Camisa polo de malha de algodão</a>
+                            </h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">$120,00</p>
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <a href="#">
+                            <img src="/assets/images/c23756ec-1f68-439c-a226-2a40cbc6bea2_1024.jpeg" alt="4 horas de Consultoria de Estilista por Jennifer Austin">
+                        </a>
+
+                        <p class="discount">-7%</p>
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>
+                                <a href="#">4 horas de Consultoria de Estilista por Jennifer Austin</a>
+                            </h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">
+                                    <span class="actual-price">$129,00</span>
+                                    $120,00
+                                </p>
+
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <a href="#">
+                            <img src="/assets/images/Group-2.png" alt="Ebook Glamour Moderno - por Kate Spade">
+                        </a>
+
+                        <p class="discount">-9%</p>
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>
+                                <a href="#">Ebook Glamour Moderno - por Kate Spade</a>
+                            </h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">
+                                    <span class="actual-price">$87,00</span>
+                                    $79,00
+                                </p>
+
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <a href="#">
+                            <img src="/assets/images/784413_XJGKR_8011_001_100_0000_Light-Cotton-jersey-sweatshirt-1.jpg" alt="Moletom com capuz de malha de algodão">
+                        </a>
+
+                        <p class="discount">-18%</p>
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>
+                                <a href="#">Moletom com capuz de malha de algodão</a>
+                            </h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">
+                                    <span class="actual-price">$120,00</span>
+                                    $99,00
+                                </p>
+
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <a href="#">
+                            <img src="/assets/images/f52d0bc8-cc44-4e93-99a6-1d582edb002f_1024.jpeg" alt="5 horas de Consultoria de Estilista por Stella McCartney">
+                        </a>
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>
+                                <a href="#">5 horas de Consultoria de Estilista por Stella McCartney</a>
+                            </h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">$129,00</p>
+
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fz-store__product fz-product-item">
+                    <div class="image">
+                        <img src="/assets/images/742380_XJGKU_4215_001_100_0000_Light-Cotton-jersey-polo-shirt.jpg" alt="Camisa polo de malha de algodão">
+                    </div>
+
+                    <div class="info">
+                        <header class="name">
+                            <h2>Camisa polo de malha de algodão</h2>
+                        </header>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price-action">
+                            <a href="#" class="link">
+                                <p class="price">$120,00</p>
+                                <p class="action"><i class="fa-solid fa-cart-plus"></i> Adicionar ao carrinho</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <footer class="fz-footer">
+        <div class="fz-footer__container">
+            <div class="fz-footer__navigation">
+                <div class="fz-footer__headline">
+                    <div class="fz-footer__headline-logo">
+                        <a href="/">
+                            <img src="/assets/images/logo2.png" alt="Fuzion">
+                        </a>
+                    </div>
+
+                    <p class="fz-footer__headline-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos minima dolor dignissimos sint nulla, necessitatibus quo ipsa cum hic, odit modi distinctio architecto, accusantium quaerat ipsam corporis quisquam molestias deserunt.</p>
+                </div>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>Institucional</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="/">Início</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="/contato/">Contato</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Minha Conta</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Lista de Desejos</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>Loja</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Loja</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Compras</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Sair da Conta</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="fz-footer__menu">
+                    <header class="fz-footer__menu-title">
+                        <h2>E-commerce</h2>
+                    </header>
+
+                    <ul class="fz-footer__menu-list">
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Métodos de Pagamento</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Endereços</a>
+                        </li>
+
+                        <li class="fz-footer__menu-item">
+                            <a href="#">Recuperar Senha</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="fz-footer__attribution">
+                <p>Copyright &copy; 2024 Fusion E-commerce | Made with ❤️ by <a href="#" target="_blank" rel="noopener noreferrer">Jim Fahad Digital</a></p>
+
+                <p>Developed by <a href="" target="_blank" rel="noopener noreferrer">Giulliano Guimarães</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/scripts/script.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+@include theme() {    
+    &divide-section__container:has(> .fz-store__side, > .fz-store__container) {
+        padding-block: 60px 0;
+    }
+
+    &store {
+        &__side {
+            // @include flexBasis(25%);
+            @include flex1;
+
+            &-title {
+                margin-bottom: 20px;
+            }
+
+            &-search {
+                margin-bottom: 40px;
+            }
+
+            &-filter {
+                margin-bottom: 40px;
+
+                .range {
+                    @include relative;
+                    margin-bottom: 20px;
+
+                    .bar {
+                        @include containerFluid;
+                        height: 3px;
+                        background-color: $color-light-gray;
+                    }
+
+                    .progress {
+                        @include absolute;
+                        height: 100%;
+                        right: 0;
+                        background-color: $color-blue;
+                    }
+                }
+
+                .handle {
+                    @include absoluteFull(0, 0, true);
+                    @include setBrowserPrefix(appearance, none, "webkit");
+                    background: none;
+                    pointer-events: none;
+
+                    &::-webkit-slider-thumb {
+                        width: 10px;
+                        height: 10px;
+                        @include setBrowserPrefix(appearance, none, "webkit");
+                        background-color: $color-blue;
+                        pointer-events: auto;
+                        cursor: pointer;
+                        @include rounded;
+                    }
+
+                    &::-moz-range-thumb {
+                        width: 10px;
+                        height: 10px;
+                        @include setBrowserPrefix(appearance, none, "moz");
+                        background-color: $color-blue;
+                        pointer-events: auto;
+                        cursor: pointer;
+                        border: none;
+                    }
+                }
+
+                .value {
+                    @include flex(flex-start);
+                    gap: 20px;
+                }
+            }
+
+            &-categories {
+                margin-bottom: 40px;
+
+                .list {
+                    line-height: 2.4em;
+                }
+
+                .item {
+                    color: $color-gray;
+                    cursor: pointer;
+                    @include transition;
+                    @include flex(space-between);
+
+                    &:hover, &.selected {
+                        color: $color-dark-blue;
+                    }
+                }
+            }
+
+            &-tags {
+                .list {
+                    @include flex(flex-start, stretch);
+                    gap: 5px;
+                }
+
+                .item {
+                    padding: 2px 6px;
+                    border: 1px solid $color-dark-blue;
+                    cursor: pointer;
+                    @include transition;
+
+                    &:hover, &.selected {
+                        background-color: $color-dark-blue;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        &__container {
+            // @include flexBasis(75%, 60px);
+            @include flex1;
+            @include flex(flex-start, stretch);
+            gap: 30px;
+        }
+
+        &__product {
+            // @include flex3(30px);
+            @include flex1;
+        }
+    }
+}
