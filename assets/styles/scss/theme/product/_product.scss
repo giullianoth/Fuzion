@@ -1,0 +1,283 @@
+body:has(.fz-product) {
+    .fz-header__wrapper {
+        border-color: $color-lighter-gray;
+    }
+}
+
+@include theme() {
+    &product {
+        @include containerFluid;
+        padding-block: 60px;
+        background-color: $color-lighter-gray;
+
+        &__container {
+            @include container2;
+        }
+
+        &__breadcumb {
+            margin-bottom: 40px;
+            color: $color-gray;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        &__wrapper {
+            @include flex(flex-start, flex-start);
+            gap: 20px;
+        }
+
+        &__images {
+            @include flexBasis(45%);
+            @include flex(flex-start, stretch, nowrap);
+            gap: 20px;
+
+            &-thumbs {
+                @include flexBasis(60px);
+                @include flex(flex-start, flex-start, nowrap);
+                @include column;
+                gap: 12px;
+                height: 60px;
+
+                .thumb {
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    @include flex;
+                    @include transition;
+
+                    &:hover, &.selected {
+                        border-color: $color-dark-blue;
+                    }
+                }
+            }
+
+            &-featured {
+                @include flexBasis(calc(100% - 60px), 20px);
+                @include relative;
+            }
+
+            &-area {                
+                @include flex(flex-start, stretch, nowrap);
+                overflow: hidden;
+            }
+
+            &-navigation {
+                i {
+                    @include absolute(unset, unset);
+                    background-color: $color-white;
+                    width: 34px;
+                    height: 34px;
+                    cursor: pointer;
+                    @include flex;
+
+                    &.prev {
+                        top: 50%;
+                        left: 10px;
+                        transform: translateY(-50%);
+                        color: $color-gray;
+                        @include rounded;
+                    }
+
+                    &.next {
+                        top: 50%;
+                        right: 10px;
+                        transform: translateY(-50%);
+                        color: $color-gray;
+                        @include rounded;
+                    }
+
+                    &.expand {
+                        bottom: 10px;
+                        right: 10px;
+                        color: $color-light-gray;
+                        border: 1px solid $color-light-gray;
+                        @include borderRadius(5px);
+                    }
+                }
+            }
+        }
+
+        &__overview {
+            @include flexBasis(55%, 20px);
+        }
+
+        &__title {
+            margin-bottom: 10px;
+
+            h1 {
+                font-weight: 500;
+            }
+        }
+
+        &__price {
+            font-size: 1.6em;
+            color: $color-gray;
+            margin-bottom: 40px;
+        }
+
+        &__info {
+            color: $color-gray;
+            margin-bottom: 40px;
+        }
+
+        &__size, &__color {
+            color: $color-gray;
+            margin-bottom: 40px;
+
+            strong {
+                color: $color-dark-blue;
+            }
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__color {
+            ul {
+                @include flex(flex-start);
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            li {
+                width: 30px;
+                height: 30px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                @include borderRadius(3px);
+                overflow: hidden;
+                @include transition;
+
+                &:hover, &.selected {
+                    border-color: $color-dark-blue;
+                }
+
+                &.selected {
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .select-color {
+                @include containerFluid(true);
+                @include flex;
+                color: $color-white;
+                border: 2px solid $color-light-gray;
+
+                &.black {
+                    background-color: $color-black;
+                }
+
+                &.blue {
+                    background-color: #2181BD;
+                }
+
+                &.pink {
+                    background-color: #CF3C74;
+                }
+
+                i {
+                    opacity: 0;
+                    @include transition;
+                }
+            }
+
+            .clear {
+                font-size: inherit;
+                font-family: inherit;
+                color: inherit;
+                background-color: $color-white;
+                border: none;
+                padding: 4px 12px;
+                cursor: pointer;
+            }
+        }
+
+        &__remaining {
+            margin-bottom: 40px;
+
+            p {
+                color: $color-gray;
+                margin-bottom: 10px;
+            }
+
+            .bar {
+                width: 100%;
+                height: 10px;
+                background-color: $color-light-gray;
+            }
+
+            .qt {
+                width: 45%;
+                height: 100%;
+                background-color: $color-blue;
+            }
+        }
+
+        &__purchase {
+            margin-bottom: 40px;
+            @include flex(flex-start, center);
+            gap: 20px 10px;
+
+            .quantity {
+                @include flex(space-between, center, nowrap);
+                width: 160px;
+                background-color: $color-white;
+                padding: 12px;
+                @include borderRadius(30px);
+
+                button {
+                    color: $color-gray;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            .fz-button {
+                text-transform: uppercase;
+            }
+
+            .wishlist {
+                @include flex1;
+
+                a {
+                    color: $color-dark-blue;
+                }
+            }
+        }
+
+        &__details {
+            margin-bottom: 40px;
+            line-height: 1.8em;
+            color: $color-gray;
+
+            span {
+                color: $color-dark-blue;
+            }
+        }
+
+        &__payments {
+            width: fit-content;
+            padding: 20px 40px;
+            border: 3px solid $color-dark-blue;
+            text-align: center;
+
+            .title {
+                font-size: 1.2em;
+                font-weight: 700;
+                text-transform: uppercase;
+                background-color: $color-lighter-gray;
+                margin-block: -36px 18px;
+                padding-inline: 12px;
+            }
+
+            img {
+                filter: saturate(0);
+            }
+        }
+    }
+}
