@@ -1,13 +1,13 @@
 body:has(.fz-product) {
     .fz-header__wrapper {
-        border-color: $color-lighter-gray;
+        border-color: transparent;
     }
 }
 
 @include theme() {
     &product {
         @include containerFluid;
-        padding-block: 60px;
+        padding-block: 100px 60px;
         background-color: $color-lighter-gray;
 
         &__container {

@@ -1750,12 +1750,12 @@ input:not([type=range])::placeholder, textarea::placeholder {
 
 /* Product Page */
 body:has(.fz-product) .fz-header__wrapper {
-  border-color: #F2F3F5;
+  border-color: transparent;
 }
 
 .fz-product {
   width: 100%;
-  padding-block: 60px;
+  padding-block: 100px 60px;
   background-color: #F2F3F5;
 }
 .fz-product__container {
