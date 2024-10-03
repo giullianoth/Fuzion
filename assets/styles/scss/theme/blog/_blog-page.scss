@@ -1,6 +1,7 @@
 @include theme() {
     &divide-section__container:has(> .fz-blog-page__side, > .fz-blog-page__container) {
         padding-block: 60px 0;
+        gap: 40px;
     }
 
     &blog-page {
@@ -40,6 +41,7 @@
 
             @include setResponsiveDesign($breakpoint-medium) {
                 max-width: none;
+                margin: 0;
             }
 
             @include setResponsiveDesign($breakpoint-extra-large) {

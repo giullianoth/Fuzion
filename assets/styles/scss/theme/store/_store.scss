@@ -5,8 +5,14 @@
 
     &store {
         &__side {
-            // @include flexBasis(25%);
             @include flex1;
+            @include container(480px, 0);
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(20%);
+                max-width: none;
+                margin: 0;
+            }
 
             &-title {
                 margin-bottom: 20px;
@@ -65,8 +71,13 @@
                 }
 
                 .value {
-                    @include flex(flex-start);
+                    @include flex(flex-start, center, nowrap);
                     gap: 20px;
+                    color: $color-gray;
+                }
+
+                .fz-button {
+                    padding: 8px 20px;
                 }
             }
 
@@ -110,15 +121,25 @@
         }
 
         &__container {
-            // @include flexBasis(75%, 60px);
             @include flex1;
             @include flex(flex-start, stretch);
             gap: 30px;
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(80%, 60px);
+            }
         }
 
         &__product {
-            // @include flex3(30px);
             @include flex1;
+
+            @include setResponsiveDesign($breakpoint-small) {
+                @include flex2(30px);
+            }
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flex3(30px);
+            }
         }
     }
 }
