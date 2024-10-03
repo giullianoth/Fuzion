@@ -1780,41 +1780,35 @@ body:has(.fz-product) .fz-header__wrapper {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px 20px;
 }
 .fz-product__images {
-  flex-basis: 45%;
+  flex-basis: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  flex-wrap: nowrap;
-  gap: 20px;
-}
-.fz-product__images-thumbs {
-  flex-basis: 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  gap: 12px;
-  height: 60px;
-}
-.fz-product__images-thumbs .thumb {
-  cursor: pointer;
-  border: 1px solid transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  transition: all 0.3s ease 0s;
+  gap: 20px;
+  max-width: 480px;
+  padding-inline: 0;
+  margin-inline: auto;
 }
-.fz-product__images-thumbs .thumb:hover, .fz-product__images-thumbs .thumb.selected {
-  border-color: #050A0E;
+@media screen and (min-width: 1024px) {
+  .fz-product__images {
+    flex-basis: 45%;
+    max-width: none;
+    margin: 0;
+    flex-direction: row-reverse;
+  }
 }
 .fz-product__images-featured {
-  flex-basis: calc(100% - 60px - 20px);
+  flex-basis: 100%;
   position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .fz-product__images-featured {
+    flex-basis: calc(100% - 60px - 20px);
+  }
 }
 .fz-product__images-area {
   display: flex;
@@ -1863,8 +1857,41 @@ body:has(.fz-product) .fz-header__wrapper {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+.fz-product__images-thumbs {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 12px;
+  height: 60px;
+}
+@media screen and (min-width: 1024px) {
+  .fz-product__images-thumbs {
+    flex-basis: 60px;
+    flex-direction: column;
+  }
+}
+.fz-product__images-thumbs .thumb {
+  width: 60px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease 0s;
+}
+.fz-product__images-thumbs .thumb:hover, .fz-product__images-thumbs .thumb.selected {
+  border-color: #050A0E;
+}
 .fz-product__overview {
-  flex-basis: calc(55% - 20px);
+  flex-basis: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .fz-product__overview {
+    flex-basis: calc(55% - 20px);
+  }
 }
 .fz-product__title {
   margin-bottom: 10px;
@@ -1978,12 +2005,17 @@ body:has(.fz-product) .fz-header__wrapper {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  width: 160px;
+  width: 100%;
   background-color: #FFF;
   padding: 12px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   border-radius: 30px;
+}
+@media screen and (min-width: 576px) {
+  .fz-product__purchase .quantity {
+    width: 160px;
+  }
 }
 .fz-product__purchase .quantity button {
   color: #888;
@@ -1993,15 +2025,27 @@ body:has(.fz-product) .fz-header__wrapper {
 }
 .fz-product__purchase .fz-button {
   text-transform: uppercase;
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-product__purchase .fz-button {
+    width: auto;
+  }
 }
 .fz-product__purchase .wishlist {
   flex-basis: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 576px) {
+  .fz-product__purchase .wishlist {
+    text-align: left;
+  }
 }
 .fz-product__purchase .wishlist a {
   color: #050A0E;
 }
 .fz-product__details {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   line-height: 1.8em;
   color: #888;
 }
@@ -2009,16 +2053,27 @@ body:has(.fz-product) .fz-header__wrapper {
   color: #050A0E;
 }
 .fz-product__payments {
-  width: fit-content;
+  max-width: 768px;
+  padding-inline: 0;
+  margin-inline: auto;
   padding: 20px 40px;
   border: 3px solid #050A0E;
   text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .fz-product__payments {
+    width: fit-content;
+    max-width: none;
+    margin: 0;
+  }
 }
 .fz-product__payments .title {
   font-size: 1.2em;
   font-weight: 700;
   text-transform: uppercase;
   background-color: #F2F3F5;
+  width: fit-content;
+  margin-inline: auto;
   margin-block: -36px 18px;
   padding-inline: 12px;
 }

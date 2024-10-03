@@ -25,36 +25,29 @@ body:has(.fz-product) {
 
         &__wrapper {
             @include flex(flex-start, flex-start);
-            gap: 20px;
+            gap: 40px 20px;
         }
 
         &__images {
-            @include flexBasis(45%);
-            @include flex(flex-start, stretch, nowrap);
+            @include flex1;
+            @include flex(flex-start, stretch);
             gap: 20px;
+            @include container(480px, 0);
 
-            &-thumbs {
-                @include flexBasis(60px);
-                @include flex(flex-start, flex-start, nowrap);
-                @include column;
-                gap: 12px;
-                height: 60px;
-
-                .thumb {
-                    cursor: pointer;
-                    border: 1px solid transparent;
-                    @include flex;
-                    @include transition;
-
-                    &:hover, &.selected {
-                        border-color: $color-dark-blue;
-                    }
-                }
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(45%);
+                max-width: none;
+                margin: 0;
+                @include rowReverse;
             }
 
             &-featured {
-                @include flexBasis(calc(100% - 60px), 20px);
+                @include flex1;
                 @include relative;
+
+                @include setResponsiveDesign($breakpoint-extra-large) {
+                    @include flexBasis(calc(100% - 60px), 20px);
+                }
             }
 
             &-area {                
@@ -96,10 +89,38 @@ body:has(.fz-product) {
                     }
                 }
             }
+            
+            &-thumbs {
+                @include flex1;
+                @include flex(flex-start, flex-start, nowrap);
+                gap: 12px;
+                height: 60px;
+
+                @include setResponsiveDesign($breakpoint-extra-large) {
+                    @include flexBasis(60px);
+                    @include column;
+                }
+
+                .thumb {
+                    width: 60px;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    @include flex;
+                    @include transition;
+
+                    &:hover, &.selected {
+                        border-color: $color-dark-blue;
+                    }
+                }
+            }
         }
 
         &__overview {
-            @include flexBasis(55%, 20px);
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(55%, 20px);
+            }
         }
 
         &__title {
@@ -224,10 +245,14 @@ body:has(.fz-product) {
 
             .quantity {
                 @include flex(space-between, center, nowrap);
-                width: 160px;
+                @include containerFluid;
                 background-color: $color-white;
                 padding: 12px;
                 @include borderRadius(30px);
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    width: 160px;
+                }
 
                 button {
                     color: $color-gray;
@@ -239,10 +264,20 @@ body:has(.fz-product) {
 
             .fz-button {
                 text-transform: uppercase;
+                @include containerFluid;
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    width: auto;
+                }
             }
 
             .wishlist {
                 @include flex1;
+                text-align: center;
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    text-align: left;
+                }
 
                 a {
                     color: $color-dark-blue;
@@ -251,7 +286,7 @@ body:has(.fz-product) {
         }
 
         &__details {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             line-height: 1.8em;
             color: $color-gray;
 
@@ -260,17 +295,25 @@ body:has(.fz-product) {
             }
         }
 
-        &__payments {
-            width: fit-content;
+        &__payments {          
+            @include container($breakpoint-medium, 0);
             padding: 20px 40px;
             border: 3px solid $color-dark-blue;
             text-align: center;
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                width: fit-content;
+                max-width: none;
+                margin: 0;
+            }
 
             .title {
                 font-size: 1.2em;
                 font-weight: 700;
                 text-transform: uppercase;
                 background-color: $color-lighter-gray;
+                width: fit-content;
+                margin-inline: auto;
                 margin-block: -36px 18px;
                 padding-inline: 12px;
             }
