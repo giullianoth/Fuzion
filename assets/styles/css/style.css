@@ -2136,7 +2136,7 @@ body:has(.fz-product) .fz-header__wrapper {
   padding-inline: 0;
   margin-inline: auto;
 }
-.fz-product-information__content:not(:nth-child(3)) {
+.fz-product-information__content:not(:first-child) {
   display: none;
 }
 .fz-product-information__content-rating .ratings {

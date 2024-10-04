@@ -39,8 +39,7 @@
         }
 
         &__content {
-            // &:not(:first-child) {
-            &:not(:nth-child(3)) {
+            &:not(:first-child) {
                 display: none;
             }
 
