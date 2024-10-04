@@ -1,0 +1,126 @@
+@include theme() {
+    &product-information {
+        @include containerFluid;
+        padding-block: 60px;
+
+        &__container {
+            @include container2
+        }
+
+        &__tabs {
+            @include flex;
+            gap: 20px 40px;
+            margin-bottom: 40px;
+        }
+
+        &__tab {
+            text-align: center;
+            color: $color-gray;
+            font-weight: 500;
+            cursor: pointer;
+            @include transition;
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-small) {                
+                font-size: 1.2em;
+            }
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                @include flexBasis(unset);
+            }
+
+            &:hover, &.active {
+                color: $color-blue;
+            }
+        }
+
+        &__wrapper {
+            @include container($breakpoint-medium , 0);
+        }
+
+        &__content {
+            // &:not(:first-child) {
+            &:not(:nth-child(3)) {
+                display: none;
+            }
+
+            &-rating {
+                .ratings {
+                    margin-bottom: 60px;
+                }
+
+                .rating {
+                    @include flex(flex-start, stretch, nowrap);
+                    gap: 20px;
+
+                    &-image {
+                        @include flexBasis(60px);
+                    }
+
+                    &-review {
+                        @include flexBasis(calc(100% - 60px), 20px);
+                        color: $color-gray;
+                    }
+
+                    &-name {
+                        margin-bottom: 7px;
+
+                        h3 {
+                            font-size: 1em;
+                            font-weight: 400;
+
+                            strong {
+                                color: initial;
+                            }
+                        }
+                    }
+                }
+
+                .rate {
+                    color: $color-gray;
+
+                    &-info, &-stars {
+                        margin-bottom: 20px;
+                    }
+
+                    &-stars {
+                        i {
+                            color: $color-light-gray;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &-form {
+                        @include flex(flex-start, stretch, nowrap);
+                        @include column;
+
+                        input:not([type="checkbox"]), textarea {
+                            margin-bottom: 20px;
+                            @include borderRadius(0);
+                        }
+
+                        .save {
+                            @include flex(flex-start, center, nowrap);
+                            gap: 10px;
+                            margin-bottom: 20px;
+                        }
+
+                        .fz-button {
+                            @include setResponsiveDesign($breakpoint-small) {
+                                align-self: flex-start;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        .fz-simple-list {
+            color: $color-gray;
+        }
+    }
+}

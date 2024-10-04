@@ -52,6 +52,16 @@ input:not([type=range])::placeholder, textarea::placeholder {
   color: #CCC;
 }
 
+table {
+  border-collapse: collapse;
+  color: #888;
+  width: 100%;
+}
+table th, table td {
+  padding: 6px;
+  border: 1px solid #888;
+}
+
 .fz-button {
   text-decoration: none;
   text-align: center;
@@ -145,6 +155,12 @@ input:not([type=range])::placeholder, textarea::placeholder {
 }
 .fz-divider.left {
   margin-inline: 0 auto;
+}
+.fz-simple-list {
+  padding-inline-start: 40px;
+}
+.fz-simple-list li {
+  list-style: disc;
 }
 @media screen and (min-width: 576px) {
   .fz-card {
@@ -1953,15 +1969,6 @@ body:has(.fz-product) .fz-header__wrapper {
   color: #FFF;
   border: 2px solid #CCC;
 }
-.fz-product__color .select-color.black {
-  background-color: #000;
-}
-.fz-product__color .select-color.blue {
-  background-color: #2181BD;
-}
-.fz-product__color .select-color.pink {
-  background-color: #CF3C74;
-}
 .fz-product__color .select-color i {
   opacity: 0;
   transition: all 0.3s ease 0s;
@@ -2079,4 +2086,125 @@ body:has(.fz-product) .fz-header__wrapper {
 }
 .fz-product__payments img {
   filter: saturate(0);
+}
+
+.fz-product-information {
+  width: 100%;
+  padding-block: 60px;
+}
+.fz-product-information__container {
+  max-width: 1600px;
+  padding-inline: 1em;
+  margin-inline: auto;
+}
+@media screen and (min-width: 992px) {
+  .fz-product-information__container {
+    padding-inline: 4em;
+  }
+}
+.fz-product-information__tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  margin-bottom: 40px;
+}
+.fz-product-information__tab {
+  text-align: center;
+  color: #888;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-product-information__tab {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fz-product-information__tab {
+    flex-basis: unset;
+  }
+}
+.fz-product-information__tab:hover, .fz-product-information__tab.active {
+  color: #1544B1;
+}
+.fz-product-information__wrapper {
+  max-width: 768px;
+  padding-inline: 0;
+  margin-inline: auto;
+}
+.fz-product-information__content:not(:nth-child(3)) {
+  display: none;
+}
+.fz-product-information__content-rating .ratings {
+  margin-bottom: 60px;
+}
+.fz-product-information__content-rating .rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.fz-product-information__content-rating .rating-image {
+  flex-basis: 60px;
+}
+.fz-product-information__content-rating .rating-review {
+  flex-basis: calc(100% - 60px - 20px);
+  color: #888;
+}
+.fz-product-information__content-rating .rating-name {
+  margin-bottom: 7px;
+}
+.fz-product-information__content-rating .rating-name h3 {
+  font-size: 1em;
+  font-weight: 400;
+}
+.fz-product-information__content-rating .rating-name h3 strong {
+  color: initial;
+}
+.fz-product-information__content-rating .rate {
+  color: #888;
+}
+.fz-product-information__content-rating .rate-info, .fz-product-information__content-rating .rate-stars {
+  margin-bottom: 20px;
+}
+.fz-product-information__content-rating .rate-stars i {
+  color: #CCC;
+  cursor: pointer;
+}
+.fz-product-information__content-rating .rate-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.fz-product-information__content-rating .rate-form input:not([type=checkbox]), .fz-product-information__content-rating .rate-form textarea {
+  margin-bottom: 20px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.fz-product-information__content-rating .rate-form .save {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 576px) {
+  .fz-product-information__content-rating .rate-form .fz-button {
+    align-self: flex-start;
+  }
+}
+.fz-product-information__title {
+  margin-bottom: 20px;
+}
+.fz-product-information .fz-simple-list {
+  color: #888;
 }

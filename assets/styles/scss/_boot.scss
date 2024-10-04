@@ -50,6 +50,17 @@ input:not([type="range"]), textarea {
     }
 }
 
+table {
+    border-collapse: collapse;
+    color: $color-gray;
+    @include containerFluid;
+
+    th, td {
+        padding: 6px;
+        border: 1px solid $color-gray;
+    }
+}
+
 @include theme() {
     &button {
         text-decoration: none;
@@ -145,6 +156,14 @@ input:not([type="range"]), textarea {
 
         &.left {
             margin-inline: 0 auto;
+        }
+    }
+
+    &simple-list {
+        padding-inline-start: 40px;
+
+        li {
+            list-style: disc;
         }
     }
 
