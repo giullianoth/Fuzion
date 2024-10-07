@@ -1,0 +1,136 @@
+.fz-modal__content:has(.fz-cart-modal) {
+    overflow: hidden;
+}
+
+@include theme() {
+    &cart-modal {
+        @include containerFluid(true);
+        @include flex(flex-start, stretch, nowrap);
+        @include column;
+
+        &__heading {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            @include flex(space-between, center, nowrap);
+            border-bottom: 1px solid $color-light-gray;
+
+            .close {
+                color: $color-gray;
+                cursor: pointer;
+            }
+        }
+
+        &__title {
+            @include flex;
+            gap: 10px;
+
+            h1 {
+                font-weight: 400;
+                font-size: 1.2em;
+                text-transform: uppercase;
+            }
+
+            .cart-qt {
+                width: 20px;
+                height: 20px;
+                background-color: $color-blue;
+                color: $color-white;
+                font-size: 0.8em;
+                @include borderRadius;
+                @include flex;
+            }
+        }
+
+        &__list {
+            @include flex1;
+            @include flex(flex-start, stretch, nowrap);
+            @include column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        &__item {
+            @include flex(flex-start, flex-start, nowrap);
+            gap: 20px;
+
+            .image {
+                @include flexBasis(80px);
+            }
+
+            .info {
+                @include flexBasis(calc(100% - 80px), 20px);
+
+                .name {
+                    margin-bottom: 10px;
+
+                    a {
+                        color: inherit;
+                    }
+                }
+
+                .qt-price {
+                    @include flex(space-between, center, nowrap);
+                }
+
+                .qt {
+                    @include flex(center, stretch, nowrap);
+                    color: $color-gray;
+                    font-size: 0.9em;
+                    
+                    button {
+                        background-color: $color-white;
+                        color: $color-gray;
+                        border: 1px solid $color-light-gray;
+                        cursor: pointer;
+                        padding-inline: 6px;
+
+                        &.remove {
+                            @include borderRadius(30px 0 0 30px);
+                        }
+
+                        &.add {
+                            @include borderRadius(0 30px 30px 0);
+                        }
+                    }
+
+                    .display {
+                        width: 30px;
+                        text-align: center;
+                        border-top: 1px solid $color-light-gray;
+                        border-bottom: 1px solid $color-light-gray;
+                    }
+                }
+
+                .price {
+                    color: $color-gray;
+                }
+            }
+        }
+
+        &__subtotal {
+            padding-top: 20px;
+            margin-block: 20px;
+            border-top: 1px solid $color-light-gray;
+            text-transform: uppercase;
+            font-weight: 700;
+            @include flex(space-between, center, nowrap);
+
+            .price {
+                color: $color-blue;
+            }
+        }
+
+        &__actions {
+            @include flex(flex-start, stretch, nowrap);
+            @include column;
+            gap: 10px;
+            text-align: center;
+            text-transform: uppercase;
+
+            a:not(.fz-button) {
+                color: inherit;
+                font-weight: 600;
+            }
+        }
+    }
+}

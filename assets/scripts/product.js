@@ -13,8 +13,8 @@ const imageThumbs = document.querySelectorAll(".j_immage_thumb"),
     quantityButtons = document.querySelectorAll(".j_qt_change"),
     quantityDisplay = document.querySelector(".j_qt_display"),
     informationTabs = document.querySelector(".j_tabs"),
-    informationTabsButtons = informationTabs.querySelectorAll(".j_tab"),
-    informationTabscontents = [...informationTabs.querySelectorAll(".j_tab_content")]
+    informationTabsButtons = informationTabs ? informationTabs.querySelectorAll(".j_tab") : null,
+    informationTabscontents = informationTabs ? [...informationTabs.querySelectorAll(".j_tab_content")] : null
 
 let featured = images[0],
     imageLength = featured ? featured.offsetWidth : 0
@@ -106,13 +106,15 @@ export function ProductQuantity() {
 }
 
 export function InformationTabs() {
-    informationTabsButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            let tabContent = informationTabscontents.find(content => content.id === button.dataset.target)
-
-            informationTabscontents.forEach(content => fadeOut(content))
-
-            setTimeout(() => fadeIn(tabContent), 300)
+    if (informationTabsButtons) {
+        informationTabsButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                let tabContent = informationTabscontents.find(content => content.id === button.dataset.target)
+    
+                informationTabscontents.forEach(content => fadeOut(content))
+    
+                setTimeout(() => fadeIn(tabContent), 300)
+            })
         })
-    })
+    }
 }

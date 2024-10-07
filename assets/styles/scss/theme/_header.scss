@@ -114,6 +114,15 @@
             a {
                 color: $color-dark-blue;
             }
+
+            button {
+                color: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
         }
     }
 }

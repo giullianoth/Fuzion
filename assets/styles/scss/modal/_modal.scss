@@ -1,0 +1,43 @@
+@include theme() {
+    &modal {
+        @include fixedFull(0, 0, true);
+        background-color: $color-black-overlay;
+        z-index: 200;
+        @include flex;
+        display: none;
+
+        &__wrapper {
+            background-color: $color-white;
+            padding: 20px;
+            height: 100%;
+
+            &.center {
+                @include setResponsiveDesign($breakpoint-small) {
+                    max-width: 660px;
+                    height: 86vh;
+                    @include borderRadius;
+                }
+            }
+
+            &.right {
+                transform: translateX(100%);
+                @include transition;
+
+                @include setResponsiveDesign($breakpoint-small) {
+                    max-width: 430px;
+                    margin-left: auto;
+                }
+
+                &.active {
+                    transform: none;
+                }
+                
+            }
+        }
+
+        &__content {
+            @include containerFluid(true);
+            overflow-y: auto;
+        }
+    }
+}

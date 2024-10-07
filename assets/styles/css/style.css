@@ -291,6 +291,53 @@ table th, table td {
   cursor: pointer;
 }
 
+.fz-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+.fz-modal__wrapper {
+  background-color: #FFF;
+  padding: 20px;
+  height: 100%;
+}
+@media screen and (min-width: 576px) {
+  .fz-modal__wrapper.center {
+    max-width: 660px;
+    height: 86vh;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+}
+.fz-modal__wrapper.right {
+  transform: translateX(100%);
+  transition: all 0.3s ease 0s;
+}
+@media screen and (min-width: 576px) {
+  .fz-modal__wrapper.right {
+    max-width: 430px;
+    margin-left: auto;
+  }
+}
+.fz-modal__wrapper.right.active {
+  transform: none;
+}
+.fz-modal__content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
 /* Header & Footer */
 .fz-header {
   width: 100%;
@@ -417,6 +464,14 @@ table th, table td {
 }
 .fz-header__user a {
   color: #050A0E;
+}
+.fz-header__user button {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .fz-footer {
@@ -2266,4 +2321,155 @@ body:has(.fz-product) .fz-header__wrapper {
   .fz-product-related__product {
     flex-basis: calc(25% - 22.5px);
   }
+}
+
+/* Cart */
+.fz-modal__content:has(.fz-cart-modal) {
+  overflow: hidden;
+}
+
+.fz-cart-modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.fz-cart-modal__heading {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #CCC;
+}
+.fz-cart-modal__heading .close {
+  color: #888;
+  cursor: pointer;
+}
+.fz-cart-modal__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fz-cart-modal__title h1 {
+  font-weight: 400;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.fz-cart-modal__title .cart-qt {
+  width: 20px;
+  height: 20px;
+  background-color: #1544B1;
+  color: #FFF;
+  font-size: 0.8em;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fz-cart-modal__list {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+.fz-cart-modal__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.fz-cart-modal__item .image {
+  flex-basis: 80px;
+}
+.fz-cart-modal__item .info {
+  flex-basis: calc(100% - 80px - 20px);
+}
+.fz-cart-modal__item .info .name {
+  margin-bottom: 10px;
+}
+.fz-cart-modal__item .info .name a {
+  color: inherit;
+}
+.fz-cart-modal__item .info .qt-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.fz-cart-modal__item .info .qt {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  color: #888;
+  font-size: 0.9em;
+}
+.fz-cart-modal__item .info .qt button {
+  background-color: #FFF;
+  color: #888;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  padding-inline: 6px;
+}
+.fz-cart-modal__item .info .qt button.remove {
+  -moz-border-radius: 30px 0 0 30px;
+  -webkit-border-radius: 30px 0 0 30px;
+  border-radius: 30px 0 0 30px;
+}
+.fz-cart-modal__item .info .qt button.add {
+  -moz-border-radius: 0 30px 30px 0;
+  -webkit-border-radius: 0 30px 30px 0;
+  border-radius: 0 30px 30px 0;
+}
+.fz-cart-modal__item .info .qt .display {
+  width: 30px;
+  text-align: center;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+.fz-cart-modal__item .info .price {
+  color: #888;
+}
+.fz-cart-modal__subtotal {
+  padding-top: 20px;
+  margin-block: 20px;
+  border-top: 1px solid #CCC;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.fz-cart-modal__subtotal .price {
+  color: #1544B1;
+}
+.fz-cart-modal__actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.fz-cart-modal__actions a:not(.fz-button) {
+  color: inherit;
+  font-weight: 600;
 }
