@@ -52,6 +52,10 @@ input:not([type=range])::placeholder, textarea::placeholder {
   color: #CCC;
 }
 
+input[type=radio], input[type=checkbox] {
+  cursor: pointer;
+}
+
 table {
   border-collapse: collapse;
   color: #888;
@@ -1820,6 +1824,7 @@ body:has(.fz-product) .fz-header__wrapper {
 .fz-product__images-featured {
   flex-basis: 100%;
   position: relative;
+  overflow: hidden;
 }
 @media screen and (min-width: 1024px) {
   .fz-product__images-featured {
@@ -1831,7 +1836,14 @@ body:has(.fz-product) .fz-header__wrapper {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
-  overflow: hidden;
+  transition: all 0.3s ease 0s;
+}
+.fz-product__images-zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .fz-product__images-navigation i {
   position: absolute;

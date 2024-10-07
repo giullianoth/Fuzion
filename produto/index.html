@@ -107,14 +107,17 @@
                 <div class="fz-product__wrapper">
                     <div class="fz-product__images">
                         <div class="fz-product__images-featured">
-                            <div class="fz-product__images-area">
-                                <img src="/assets/images/784361_XJGKK_4735_001_100_0000_Light-Cotton-jersey-T-shirt-with-Gucci-print-1.jpg" alt="Thumb 1">
-                                <img src="/assets/images/784361_XJGKK_4735_005_100_0000_Light-Cotton-jersey-T-shirt-with-Gucci-print.jpg" alt="Thumb 2">
+                            <div class="fz-product__images-area j_featured_area">
+                                <img src="/assets/images/784361_XJGKK_4735_001_100_0000_Light-Cotton-jersey-T-shirt-with-Gucci-print-1.jpg" alt="Photo 1" class="j_product_image">
+                                <img src="/assets/images/784361_XJGKK_4735_005_100_0000_Light-Cotton-jersey-T-shirt-with-Gucci-print.jpg" alt="Photo 2" class="j_product_image">
+                                <img src="/assets/images/742380_XJGKU_4215_001_100_0000_Light-Cotton-jersey-polo-shirt.jpg" alt="Photo 3" class="j_product_image">
                             </div>
+
+                            <div class="fz-product__images-zoom j_zoom_area"></div>
                             
                             <div class="fz-product__images-navigation">
-                                <i class="fa-solid fa-chevron-left nav prev"></i>
-                                <i class="fa-solid fa-chevron-right nav next"></i>
+                                <i class="fa-solid fa-chevron-left nav prev j_nav"></i>
+                                <i class="fa-solid fa-chevron-right nav next j_nav"></i>
                                 <i class="fa-solid fa-maximize expand"></i>
                             </div>
                         </div>
@@ -126,6 +129,10 @@
 
                             <div class="thumb j_immage_thumb">
                                 <img src="/assets/images/784361_XJGKK_4735_005_100_0000_Light-Cotton-jersey-T-shirt-with-Gucci-print.jpg" alt="Thumb 2">
+                            </div>
+
+                            <div class="thumb j_immage_thumb">
+                                <img src="/assets/images/742380_XJGKU_4215_001_100_0000_Light-Cotton-jersey-polo-shirt.jpg" alt="Thumb 3">
                             </div>
                         </div>
                     </div>
@@ -140,39 +147,41 @@
                         <p class="fz-product__info">Inspirado no espírito do verão e nos clubes de praia da costa italiana, este item faz parte da Gucci Lido. Códigos emblemáticos da Maison e padrões refinados são reinterpretados de maneiras contemporâneas para a coleção Pré-Outono. Apresentada em jersey de algodão branco, esta camiseta é definida por uma estampa Gucci Web.</p>
 
                         <div class="fz-product__size">
-                            <p class="title"><strong>TAMANHO:</strong> M</p>
+                            <p class="title"><strong>TAMANHO:</strong> <span class="j_size_selected">M</span></p>
 
                             <ul>
-                                <li><input type="radio" name="product-size" id="product-size"> <strong>P</strong></li>
-                                <li><input type="radio" name="product-size" id="product-size" checked> <strong>M</strong></li>
-                                <li><input type="radio" name="product-size" id="product-size"> <strong>G</strong></li>
+                                <li><input type="radio" name="product-size" id="product-size" value="P" class="j_size_select"> <strong>P</strong></li>
+                                <li><input type="radio" name="product-size" id="product-size" value="M" checked class="j_size_select"> <strong>M</strong></li>
+                                <li><input type="radio" name="product-size" id="product-size" value="G" class="j_size_select"> <strong>G</strong></li>
                             </ul>
                         </div>
 
                         <div class="fz-product__color">
-                            <p class="title"><strong>COR:</strong> Preto</p>
+                            <p class="title"><strong>COR:</strong> <span class="j_color_selected">Preto</span></p>
 
                             <ul>
-                                <li class="selected">
-                                    <div class="select-color black" style="background-color: #000;" title="Preto">
+                                <li class="j_color_select selected">
+                                    <div class="select-color black" style="background-color: #000;" title="Preto" data-color="Preto">
                                         <i class="fa-solid fa-check"></i>
                                     </div>
                                 </li>
 
-                                <li>
-                                    <div class="select-color blue" style="background-color: #2181BD;" title="Azul">
+                                <li class="j_color_select">
+                                    <div class="select-color blue" style="background-color: #2181BD;" title="Azul" data-color="Azul">
                                         <i class="fa-solid fa-check"></i>
                                     </div>
                                 </li>
 
-                                <li>
-                                    <div class="select-color red" style="background-color: #CF3C74;" title="Vermelho">
+                                <li class="j_color_select">
+                                    <div class="select-color red" style="background-color: #CF3C74;" title="Vermelho" data-color="Vermelho">
                                         <i class="fa-solid fa-check"></i>
                                     </div>
                                 </li>
                             </ul>
 
-                            <button class="clear"><i class="fa-solid fa-rotate"></i> Clear</button>
+                            <button class="clear j_color_clear">
+                                <i class="fa-solid fa-rotate"></i> Clear
+                            </button>
                         </div>
 
                         <div class="fz-product__remaining">
@@ -185,13 +194,13 @@
 
                         <div class="fz-product__purchase">
                             <div class="quantity">
-                                <button class="remove">
+                                <button class="remove j_qt_change">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
 
-                                <p class="qt">1</p>
+                                <p class="qt j_qt_display">1</p>
 
-                                <button class="add">
+                                <button class="add j_qt_change">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>

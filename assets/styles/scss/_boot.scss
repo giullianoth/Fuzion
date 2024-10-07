@@ -50,6 +50,12 @@ input:not([type="range"]), textarea {
     }
 }
 
+input {
+    &[type="radio"], &[type="checkbox"] {
+        cursor: pointer;
+    }
+}
+
 table {
     border-collapse: collapse;
     color: $color-gray;

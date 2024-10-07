@@ -44,6 +44,7 @@ body:has(.fz-product) {
             &-featured {
                 @include flex1;
                 @include relative;
+                overflow: hidden;
 
                 @include setResponsiveDesign($breakpoint-extra-large) {
                     @include flexBasis(calc(100% - 60px), 20px);
@@ -52,7 +53,11 @@ body:has(.fz-product) {
 
             &-area {                
                 @include flex(flex-start, stretch, nowrap);
-                overflow: hidden;
+                @include transition;
+            }
+
+            &-zoom {
+                @include absoluteFull(0, 0, true);
             }
 
             &-navigation {
