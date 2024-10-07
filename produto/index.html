@@ -228,15 +228,15 @@
         </section>
 
         <section class="fz-product-information">
-            <div class="fz-product-information__container">
+            <div class="fz-product-information__container j_tabs">
                 <ul class="fz-product-information__tabs">
-                    <li class="fz-product-information__tab active">Descrição</li>
-                    <li class="fz-product-information__tab">Informações adicionais</li>
-                    <li class="fz-product-information__tab">Avaliações (1)</li>
+                    <li class="fz-product-information__tab j_tab active" data-target="tab-description">Descrição</li>
+                    <li class="fz-product-information__tab j_tab" data-target="tab-additional">Informações adicionais</li>
+                    <li class="fz-product-information__tab j_tab" data-target="tab-rating">Avaliações (1)</li>
                 </ul>
 
                 <div class="fz-product-information__wrapper">
-                    <article class="fz-product-information__content">
+                    <article class="fz-product-information__content j_tab_content" id="tab-description">
                         <header class="fz-product-information__title">
                             <h2>A embalagem exclusiva da Maison em Rosso Ancora.</h2>
                         </header>
@@ -257,7 +257,7 @@
                         </ul>
                     </article>
 
-                    <article class="fz-product-information__content">
+                    <article class="fz-product-information__content j_tab_content" id="tab-additional">
                         <table>
                             <tr>
                                 <td>Tamanhos</td>
@@ -271,7 +271,7 @@
                         </table>
                     </article>
 
-                    <article class="fz-product-information__content fz-product-information__content-rating">
+                    <article class="fz-product-information__content fz-product-information__content-rating j_tab_content" id="tab-rating">
                         <div class="ratings">
                             <article class="rating">
                                 <div class="rating-image">

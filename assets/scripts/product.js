@@ -1,3 +1,5 @@
+import { fadeIn, fadeOut } from "./effects.js"
+
 const imageThumbs = document.querySelectorAll(".j_immage_thumb"),
     zoomArea = document.querySelector(".j_zoom_area"),
     images = [...document.querySelectorAll(".j_product_image")],
@@ -9,7 +11,10 @@ const imageThumbs = document.querySelectorAll(".j_immage_thumb"),
     colorSelected = document.querySelector(".j_color_selected"),
     colorClear = document.querySelector(".j_color_clear"),
     quantityButtons = document.querySelectorAll(".j_qt_change"),
-    quantityDisplay = document.querySelector(".j_qt_display")
+    quantityDisplay = document.querySelector(".j_qt_display"),
+    informationTabs = document.querySelector(".j_tabs"),
+    informationTabsButtons = informationTabs.querySelectorAll(".j_tab"),
+    informationTabscontents = [...informationTabs.querySelectorAll(".j_tab_content")]
 
 let featured = images[0],
     imageLength = featured ? featured.offsetWidth : 0
@@ -96,6 +101,18 @@ export function ProductQuantity() {
             if (button.classList.contains("add")) {
                 quantityDisplay.innerText = quantity + 1
             }
+        })
+    })
+}
+
+export function InformationTabs() {
+    informationTabsButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            let tabContent = informationTabscontents.find(content => content.id === button.dataset.target)
+
+            informationTabscontents.forEach(content => fadeOut(content))
+
+            setTimeout(() => fadeIn(tabContent), 300)
         })
     })
 }
