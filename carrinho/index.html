@@ -116,6 +116,8 @@
                             <p class="remove">
                                 <a href="#">Remover Item</a>
                             </p>
+
+                            <p class="total">$120,00</p>
                         </div>
                     </div>
 
@@ -130,9 +132,23 @@
                             <p class="save">Economize $12,00</p>
                             <p class="info">Melhore seu estilo com uma consultoria de 4 horas por Jennifer Austin. Receba um guia personalizado em...</p>
 
+                            <div class="qt">
+                                <button class="remove">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                
+                                <p class="display j_qt_display">1</p>
+                
+                                <button class="add">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+
                             <p class="remove">
                                 <a href="#">Remover Item</a>
                             </p>
+
+                            <p class="total">$99,00</p>
                         </div>
                     </div>
                 </section>
@@ -151,25 +167,26 @@
                 <div class="fz-cart-totals__subtotal">
                     <p>
                         <span>Subtotal</span>
-                        <span>$219,00</span>
+                        <span class="value">$219,00</span>
                     </p>
 
                     <p>
                         <span>Frete</span>
-                        <span>$5,00</span>
+                        <span class="value">$5,00</span>
                     </p>
 
-                    <p>Entrega Padrão</p>
+                    <p class="default">Entrega Padrão</p>
                 </div>
 
                 <div class="fz-cart-totals__shipping">
-                    <p>Entregar em Brasília - DF, Brasil</p>
-                    <p>
+                    <p class="address">Entregar em Brasília - DF, Brasil</p>
+
+                    <p class="change">
                         <a href="#">Alterar endereço</a>
                     </p>
 
                     <div class="shipping">
-                        <input type="radio" name="cart-shipping-type" id="cart-shipping-type">
+                        <input type="radio" name="cart-shipping-type" id="cart-shipping-type" checked>
                         <label for="cart-shipping-type">
                             <span>Entrega Padrão</span>
                             <span>$5,00</span>
@@ -178,17 +195,17 @@
                 </div>
 
                 <p class="fz-cart-totals__tax">
-                    <span>Taxad</span>
+                    <span>Taxa</span>
                     <span>$39,60</span>
                 </p>
 
                 <p class="fz-cart-totals__total">
                     <span>Total</span>
-                    <span>$258,60</span>
+                    <span class="value">$258,60</span>
                 </p>
 
                 <div class="fz-cart-totals__checkout">
-                    <p>Ou</p>
+                    <p><span>Ou</span></p>
                     <a href="#">Seguir para o Checkout</a>
                 </div>
             </aside>

@@ -1,0 +1,256 @@
+.fz-divide-section__container:has(.fz-cart-content, .fz-cart-totals) {
+    padding-block: 80px;
+    gap: 120px;
+}
+
+@include theme() {
+    &cart {
+        &-content {
+            @include flex1;
+            @include container($breakpoint-medium, 0);
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(70%, 120px);
+                max-width: none;
+                margin: 0;
+            }
+
+            &__heading {
+                padding-block: 20px;
+                @include flex(space-between, center, nowrap);
+                text-transform: uppercase;
+                display: none;
+
+                @include setResponsiveDesign($breakpoint-medium) {
+                    display: flex;
+                }
+            }
+
+            &__item {
+                padding-block: 20px;
+                @include flex(flex-start, stretch, nowrap);
+                gap: 20px;
+                border-top: 1px solid $color-light-gray;
+                @include relative;
+
+                &:last-child {
+                    border-bottom: 1px solid $color-light-gray;
+                }
+            }
+
+            &__image {
+                @include flexBasis(60px);
+            }
+
+            &__info {
+                @include flexBasis(calc(100% - 60px), 20px);
+
+                @include setResponsiveDesign($breakpoint-medium) {
+                    @include flexBasis(calc(90% - 60px), 20px);
+                }
+
+                .name {
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                }
+
+                .price {
+                    margin-bottom: 8px;
+                }
+
+                .actual-price {
+                    color: $color-light-gray;
+                    text-decoration: line-through;
+                }
+
+                .save {
+                    border: 1px solid $color-dark-blue;
+                    text-transform: uppercase;
+                    font-size: 0.9em;
+                    padding: 5px;
+                    margin-bottom: 12px;
+                    display: inline-block;
+                    @include borderRadius(3px);
+                }
+
+                .info {
+                    color: $color-gray;
+                    margin-bottom: 12px;
+                }
+
+                .remove {
+                    a {
+                        color: inherit;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .qt {
+                    @include flex(center, stretch, nowrap);
+                    display: inline-flex;
+                    color: $color-gray;
+                    font-size: 0.9em;
+                    margin-bottom: 12px;
+                    
+                    button {
+                        background-color: $color-white;
+                        color: $color-gray;
+                        border: 1px solid $color-light-gray;
+                        cursor: pointer;
+                        padding-inline: 10px;
+
+                        &.remove {
+                            @include borderRadius(30px 0 0 30px);
+                        }
+
+                        &.add {
+                            @include borderRadius(0 30px 30px 0);
+                        }
+                    }
+
+                    .display {
+                        width: 40px;
+                        text-align: center;
+                        padding-block: 5px;
+                        border-top: 1px solid $color-light-gray;
+                        border-bottom: 1px solid $color-light-gray;
+                        color: initial;
+                    }
+                }
+
+                .total {
+                    font-weight: 500;
+                    font-size: 1.2em;
+                    margin-top: 20px;
+                    text-align: right;
+
+                    @include setResponsiveDesign($breakpoint-medium) {
+                        font-size: 1em;
+                        @include absolute(20px, unset);
+                        right: 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        &-totals {
+            @include flex1;
+            @include container(480px, 0);
+
+            @include setResponsiveDesign($breakpoint-extra-large) {
+                @include flexBasis(30%);
+                max-width: none;
+                margin: 0;
+            }
+
+            &__heading {
+                padding-block: 20px;
+                border-bottom: 1px solid $color-light-gray;
+                text-transform: uppercase;
+            }
+
+            &__coupon {
+                padding: 20px 10px;
+                border-bottom: 1px solid $color-light-gray;
+
+                &-heading {
+                    @include flex(space-between, center, nowrap);
+
+                    i {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &__subtotal {
+                margin-bottom: 20px;
+
+                p {
+                    &:not(.default) {
+                        padding-block: 10px;
+                        @include flex(space-between, center, nowrap);
+                    }
+
+                    &.default {
+                        font-size: 0.7em;
+                    }
+
+                    .value {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            &__shipping {
+                margin-bottom: 20px;
+
+                .address {
+                    font-size: 0.8em;
+                    margin-bottom: 10px;
+                    color: $color-gray;
+                }
+
+                .change {
+                    margin-bottom: 20px;
+
+                    a {
+                        color: inherit;
+                    }
+                }
+            }
+
+            &__tax {
+                padding-block: 20px;
+                @include flex(space-between, center, nowrap);
+                border-bottom: 1px solid $color-light-gray;
+
+                .value {
+                    font-weight: 500;
+                }
+            }
+
+            &__total {
+                padding-block: 20px;
+                @include flex(space-between, center, nowrap);
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+            &__checkout {
+                text-align: center;
+
+                p {
+                    padding-block: 20px;
+                    overflow: hidden;
+                    @include relative;
+                    text-transform: uppercase;
+
+                    span {
+                        &::before, &::after {
+                            content: "";
+                            height: 1px;
+                            background-color: $color-light-gray;
+                            @include absoluteFull(calc(50% - 1px), unset);
+                        }
+
+                        &::before {
+                            left: calc(50% + 20px);
+                        }
+
+                        &::after {
+                            right: calc(50% + 20px);
+                        }
+                    }
+                }
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
